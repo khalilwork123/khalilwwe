@@ -4,18 +4,27 @@ import { PRODUCTS, Product } from '@shared/products';
 import { ProductCard } from './ProductCard';
 import { ProductModal } from './ProductModal';
 
+import { useEffect } from 'react';
+import { useSearch } from '@/contexts/SearchContext';
+
 export const ShopSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { query } = useSearch();
 
   const itemsPerPage = 12; // Exactly 4 rows × 3 columns = 12 items
-  const totalPages = Math.ceil(PRODUCTS.length / itemsPerPage);
+  const filtered = PRODUCTS.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+  const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [query]);
 
   const getCurrentProducts = () => {
     const start = currentPage * itemsPerPage;
     const end = start + itemsPerPage;
-    return PRODUCTS.slice(start, end);
+    return filtered.slice(start, end);
   };
 
   const handleProductClick = (product: Product) => {
