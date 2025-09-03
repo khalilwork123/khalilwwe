@@ -32,13 +32,13 @@ export const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between gap-6">
         {/* Left - Logo */}
-        <Link to="/" aria-label="Home" className="flex items-center">
+        <a href="/" aria-label="Home" className="flex items-center" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"
             alt="BURNITDOWNYT"
             className="h-10 w-auto object-contain"
           />
-        </Link>
+        </a>
 
         {/* Center/Right - Navigation */}
         <nav className="flex items-center gap-6 ml-auto">
