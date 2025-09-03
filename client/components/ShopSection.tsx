@@ -70,21 +70,25 @@ export const ShopSection = () => {
 
           {/* Products Grid - 4 columns on desktop, responsive on smaller screens */}
           <motion.div
-            key={currentPage}
+            key={currentPage + (query || '')}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            {getCurrentProducts().map((product, index) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                index={index}
-                onViewDetails={handleProductClick}
-              />
-            ))}
+            {getCurrentProducts().length === 0 ? (
+              <div className="col-span-full text-center text-gray-600">No products found.</div>
+            ) : (
+              getCurrentProducts().map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  index={index}
+                  onViewDetails={handleProductClick}
+                />
+              ))
+            )}
           </motion.div>
         </div>
       </section>
