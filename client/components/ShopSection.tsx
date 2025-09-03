@@ -39,7 +39,7 @@ export const ShopSection = () => {
 
   return (
     <>
-      <section className="py-16 px-6 bg-gray-50">
+      <section id="shop" className="py-16 px-6 bg-gray-50">
         <div className="container mx-auto">
           {/* Header with Title and Navigation Circles on Top */}
           <motion.div
