@@ -31,7 +31,9 @@ export interface Voucher {
 }
 
 export const VOUCHERS: Voucher[] = [
-  { code: 'WRESTLE10', discount: 10, type: 'percentage' }
+  { code: 'BURN', discount: 10, type: 'percentage' },
+  { code: 'WM42', discount: 25, type: 'percentage' },
+  { code: 'RKO', discount: 40, type: 'percentage' }
 ];
 
 // Using the exact belts from the screenshot with proper images
