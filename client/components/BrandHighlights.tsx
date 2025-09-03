@@ -30,21 +30,23 @@ export const BrandHighlights = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {brands.map((brand, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className={`
-                aspect-square rounded-lg flex items-center justify-center
-                ${brand.color} ${brand.textColor}
-                ${brand.border ? 'border-2 border-red-600' : ''}
-                cursor-pointer
-              `}
-            >
-              <span className="text-xl font-bold">{brand.name}</span>
-            </motion.div>
+            <a href={brand.href} target="_blank" rel="noopener noreferrer">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className={`
+                  aspect-square rounded-lg flex items-center justify-center
+                  ${brand.color} ${brand.textColor}
+                  ${brand.border ? 'border-2 border-red-600' : ''}
+                  cursor-pointer
+                `}
+              >
+                <span className="text-xl font-bold">{brand.name}</span>
+              </motion.div>
+            </a>
           ))}
         </motion.div>
       </div>
