@@ -46,7 +46,7 @@ export default function Bill() {
         {/* Bill Information */}
         <div className="grid grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>BILL TO:</h3>
+            <h3 className="text-xl font-bold mb-4" style={{ color: '#28a745' }}>BILL TO:</h3>
             <div className="space-y-1">
               <p className="font-semibold">{orderData.name}</p>
               <p>{orderData.email}</p>
@@ -58,7 +58,7 @@ export default function Bill() {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>ORDER DETAILS:</h3>
+            <h3 className="text-xl font-bold mb-4" style={{ color: '#28a745' }}>ORDER DETAILS:</h3>
             <div className="space-y-1">
               <p><strong>Order Number:</strong> {orderNumber}</p>
               <p><strong>Date:</strong> {new Date(orderData.orderDate).toLocaleDateString()}</p>
@@ -70,7 +70,7 @@ export default function Bill() {
 
         {/* Items Table */}
         <div className="mb-8">
-          <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>ITEMS ORDERED:</h3>
+          <h3 className="text-xl font-bold mb-4" style={{ color: '#28a745' }}>ITEMS ORDERED:</h3>
           <table className="w-full border-collapse border border-gray-300">
             <thead>
               <tr style={{ backgroundColor: '#f8f9fa' }}>
@@ -121,8 +121,8 @@ export default function Bill() {
         </div>
 
         {/* Instructions */}
-        <div className="border-2 border-red-500 bg-red-50 p-6 rounded mb-8">
-          <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>📸 PAYMENT INSTRUCTIONS</h3>
+        <div className="border-2 border-green-600 bg-green-50 p-6 rounded mb-8">
+          <h3 className="text-xl font-bold mb-4" style={{ color: '#28a745' }}>📸 PAYMENT INSTRUCTIONS</h3>
           <div className="space-y-2">
             <p className="font-semibold">Please follow these steps to complete your order:</p>
             <ol className="list-decimal list-inside space-y-1 ml-4">
