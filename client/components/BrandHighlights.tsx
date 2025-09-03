@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 export const BrandHighlights = () => {
   const brands = [
-    { name: 'WWE 2K', color: 'bg-red-600', textColor: 'text-white' },
-    { name: 'YouTube', color: 'bg-white', textColor: 'text-red-600', border: true },
-    { name: 'TBT', color: 'bg-black', textColor: 'text-white' },
-    { name: 'TBT', color: 'bg-purple-900', textColor: 'text-white' },
+    { name: 'WWE 2K', color: 'bg-red-600', textColor: 'text-white', href: 'https://www.facebook.com/share/g/1FNLn37Fvm/?mibextid=wwXIfr' },
+    { name: 'YouTube', color: 'bg-white', textColor: 'text-red-600', border: true, href: 'https://youtube.com/@burnitdownyt?si=M1570QuonyesV4R-' },
+    { name: 'Instagram', color: 'bg-black', textColor: 'text-white', href: 'https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr' },
+    { name: 'Instagram Store', color: 'bg-purple-900', textColor: 'text-white', href: 'https://www.instagram.com/burnitdown.store?igsh=MWc0aDhpZTd0b3dudA%3D%3D&utm_source=qr' },
   ];
 
   return (
