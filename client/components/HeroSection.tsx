@@ -22,12 +22,14 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex justify-center mt-auto mb-20"
         >
-          <Button 
-            size="lg"
-            className="bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-6 text-lg"
-          >
-            Tickets
-          </Button>
+          <a href="https://championshipbeltmaker.com" target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-6 text-lg"
+            >
+              Tickets
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
