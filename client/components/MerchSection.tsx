@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { MERCH_PRODUCTS } from '@shared/products';
+import { useCart } from '@/contexts/CartContext';
+import { Button } from '@/components/ui/button';
 
 export const MerchSection = () => {
+  const { addItem } = useCart();
   return (
-    <section className="py-16 px-6 bg-white">
+    <section id="merch" className="py-16 px-6 bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,13 +41,20 @@ export const MerchSection = () => {
               className="bg-gray-50 rounded-lg p-6 text-center overflow-hidden"
             >
               <div className="aspect-square bg-gray-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={item.image} 
+                <img
+                  src={item.image}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-semibold text-sm">{item.name}</h3>
+              <h3 className="font-semibold text-sm mb-2">{item.name}</h3>
+              <div className="text-lg font-bold mb-3">${item.price.toLocaleString()}.00</div>
+              <Button
+                onClick={() => addItem({ id: item.id, name: item.name, price: item.price, image: item.image, description: 'Merch item' })}
+                className="w-full bg-black hover:bg-white hover:text-black"
+              >
+                Add to Cart
+              </Button>
             </motion.div>
           ))}
         </motion.div>
