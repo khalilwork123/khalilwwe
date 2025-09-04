@@ -84,6 +84,9 @@ export const CartSidebar = () => {
                         <h4 className="font-medium text-sm line-clamp-2 mb-1">
                           {item.name}
                         </h4>
+                        {item.customRequest && (
+                          <p className="text-xs text-gray-600 mb-1 line-clamp-2">Custom: {item.customRequest}</p>
+                        )}
                         <p className="font-bold text-black">
                           ${item.price.toLocaleString()}.00
                         </p>
