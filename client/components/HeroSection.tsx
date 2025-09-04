@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <section
       className="bg-black text-white px-6 relative overflow-hidden h-[80vh]"
       style={{
-        backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F7c7981c24ce04d2abcdbf111ce19775e%2Fd7ea3bbbcb4f4a6b8f11bad177507db5?format=webp&width=800')`,
+        backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbb05f806738f41afb6c3a0b51a1ffac0?format=webp&width=1200')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -14,13 +14,13 @@ export const HeroSection = () => {
     >
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      
-      <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full">
+
+      <div className="container mx-auto relative z-10 h-full flex items-center justify-end">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex justify-center mt-auto mb-20"
+          className="mr-6"
         >
           <a href="https://championshipbeltmaker.com" target="_blank" rel="noopener noreferrer">
             <Button
