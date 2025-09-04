@@ -32,7 +32,6 @@ export const BrandHighlights = () => {
           {brands.map((brand, index) => (
             <a key={brand.name} href={brand.href} target="_blank" rel="noopener noreferrer">
               <motion.div
-                key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
