@@ -3,69 +3,135 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { InfoSection } from '@/components/InfoSection';
 import { CartSidebar } from '@/components/CartSidebar';
-import { ShieldCheck, Award, Package, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Award, Package, CheckCircle, Quote, BadgeCheck } from 'lucide-react';
+import { useState } from 'react';
+import ImageLightbox from '@/components/ImageLightbox';
+
+const LOGO = 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800';
+const SAMPLE = 'https://cdn.builder.io/api/v1/image/assets%2F7c7981c24ce04d2abcdbf111ce19775e%2Fd7ea3bbbcb4f4a6b8f11bad177507db5?format=webp&width=1600';
 
 export default function Info() {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+  const open = (src: string) => setLightbox(src);
+
   return (
     <div className="min-h-screen">
       <InfoSection />
       <Header />
 
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-5xl prose prose-neutral">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="!mb-4">
-            Custom Championship Belts: Premium, TV-Quality Belts Built For Champions
+      {/* Hero */}
+      <section className="relative bg-black text-white overflow-hidden">
+        <img src={SAMPLE} alt="Belts hero" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <div className="container mx-auto px-6 py-24 relative z-10 text-center font-space">
+          <motion.img initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} src={LOGO} alt="Logo" className="mx-auto w-24 h-24 object-contain mb-6 cursor-pointer" onClick={() => open(LOGO)} />
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-4xl md:text-5xl font-extrabold">
+            Custom Championship Belts – Crafted for Champions
           </motion.h1>
-          <p>
-            We design and craft TV-quality championship belts for wrestling promotions, MMA, boxing,
-            esports, influencers and special events. Every title features HD CNC‑machined plates, real
-            gemstones and genuine cowhide leather for durability, comfort and prestige.
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-3 text-white/90 max-w-3xl mx-auto">
+            Premium custom championship belts for all leagues and events worldwide.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Materials & Craft */}
+      <section className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-8">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-xl p-6">
+            <h2 className="text-2xl font-bold mb-4 font-space">Materials & Craft</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-2"><Award className="w-5 h-5 text-black mt-1" /> HD 24k gold plates with genuine gemstones</li>
+              <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-black mt-1" /> Pure cowhide leather straps for durability and comfort</li>
+              <li className="flex gap-2"><ShieldCheck className="w-5 h-5 text-black mt-1" /> Built for functionality and a luxurious finish</li>
+            </ul>
+            <div className="mt-6 rounded-lg overflow-hidden cursor-pointer" onClick={() => open(SAMPLE)}>
+              <img src={SAMPLE} alt="Detail" className="w-full h-48 object-cover" />
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-xl p-6">
+            <h2 className="text-2xl font-bold mb-4 font-space">Design Process</h2>
+            <ol className="space-y-2 text-gray-700 list-decimal list-inside">
+              <li>2D Design Approval – a detailed 2D design begins your journey.</li>
+              <li>Precision Crafting – CNC‑machined main and side plates for exact patterns.</li>
+              <li>Premium Finishing – genuine materials, polished detailing, and custom options.</li>
+            </ol>
+            <p className="mt-4 font-semibold">Investment range: $1,000 – $4,000 (depends on complexity).</p>
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              {[SAMPLE, SAMPLE, SAMPLE].map((src, i) => (
+                <img key={i} src={src} alt={`Process ${i+1}`} onClick={() => open(src)} className="h-28 w-full object-cover rounded cursor-pointer" />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Explore belts */}
+      <section className="py-16 px-6 bg-black text-white">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold mb-4 font-space">Explore Our Championship Belts</h2>
+          <p className="text-white/80 mb-6">Unbeaten craftsmanship, refined artwork, and world‑class designs:</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+            {['WWE Championship Belts','WCW Championship Belts','WWF Championship Belts','ECW Championship Belts','TNA Championship Belts','UFC Championship Belts','Custom CNC Championship Belts'].map((t) => (
+              <div key={t} className="bg-white/5 rounded px-3 py-2">• {t}</div>
+            ))}
+          </div>
+          <p className="mt-6 text-white/90">
+            Every strap is pure cowhide leather with extensive customization options: colors, textures, logos, titles, gemstones, engravings, and unique finishes.
           </p>
+        </div>
+      </section>
 
-          <h2>What Makes Our Belts Different</h2>
-          <ul>
-            <li className="flex items-start gap-2"><Award className="w-5 h-5 mt-1" /> 24k gold‑plated plates with deep, crisp engraving</li>
-            <li className="flex items-start gap-2"><CheckCircle className="w-5 h-5 mt-1" /> Genuine gemstones and crystal settings</li>
-            <li className="flex items-start gap-2"><ShieldCheck className="w-5 h-5 mt-1" /> Pure cowhide straps cut, dyed and stitched by hand</li>
-            <li className="flex items-start gap-2"><Package className="w-5 h-5 mt-1" /> Built for real use: durable, wearable and camera‑ready</li>
-          </ul>
+      {/* Why choose us */}
+      <section className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-xl p-6">
+            <h2 className="text-2xl font-bold mb-4 font-space">Why Choose Us</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-2"><Award className="w-5 h-5 text-black mt-1" /> Authentic HD belts with 24k gold plates and genuine gemstones</li>
+              <li className="flex gap-2"><Package className="w-5 h-5 text-black mt-1" /> Premium quality cowhide leather straps</li>
+              <li className="flex gap-2"><ShieldCheck className="w-5 h-5 text-black mt-1" /> ISO certified – international quality standards</li>
+              <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-black mt-1" /> Complete customization from logos to side plates</li>
+              <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-black mt-1" /> Fast worldwide delivery in 2–3 weeks</li>
+              <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-black mt-1" /> 24/7 customer support via WhatsApp and email</li>
+            </ul>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-xl p-6 bg-black text-white">
+            <h3 className="text-xl font-bold mb-3 font-space">How to Get Started</h3>
+            <p className="text-white/90">Share your concept and requirements. We’ll prepare a precise 2D layout, finalize specs, then move to machining and finishing. Your championship ships ready to display, wear and celebrate.</p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              {[SAMPLE, SAMPLE].map((src, i) => (
+                <img key={i} src={src} alt={`Gallery ${i+1}`} onClick={() => open(src)} className="h-28 w-full object-cover rounded cursor-pointer" />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-          <h2>Simple, Professional Process</h2>
-          <ol>
-            <li>2D Design Approval – Collaborate on a precise 2D mockup you can sign off on.</li>
-            <li>Precision Crafting – Main and side plates are CNC‑machined for exact patterns.</li>
-            <li>Premium Finishing – Polishing, plating, leatherwork and final quality control.</li>
-          </ol>
-          <p className="font-semibold">Typical investment: $1,000 – $4,000 depending on complexity and options.</p>
-
-          <h2>Leagues and Styles We Build</h2>
-          <p>
-            From WWE, WCW, WWF and ECW to TNA, UFC and fully custom titles, we reproduce legendary
-            designs and create originals with the same attention to detail you see on television.
-            Straps are pure cowhide leather with optional colorways, textures, logos, engravings and
-            gemstone patterns.
-          </p>
-
-          <h2>Why Teams Worldwide Trust Us</h2>
-          <ul>
-            <li>Authentic HD builds – not replicas – with 24k plates and real gemstones</li>
-            <li>ISO‑certified workshop and rigorous QC</li>
-            <li>Full customization: logos, side plates, finishes, stones and strap styles</li>
-            <li>Fast global delivery in 2–3 weeks</li>
-            <li>24/7 support via WhatsApp and email</li>
-          </ul>
-
-          <h2>Get Started</h2>
-          <p>
-            Share your concept, inspiration images and requirements. We’ll prepare a detailed 2D
-            layout, finalize specs and start machining. Your championship arrives ready to display,
-            wear and celebrate.
-          </p>
+      {/* Testimonials */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold mb-8 text-center font-space">What Buyers Say</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Mohammad – Dubai', text: 'I ordered the limited edition WWE Undisputed Championship with the John Cena side plates. The delivery was quick and it came packed properly in the belt bag. Honestly, it looks and feels just like the real thing you see on TV.' },
+              { name: 'Chris Taylor – Manchester, England', text: 'I bought the WWE Spinner Belt and the Big Gold together in a bundle. Both belts are solid, heavy, and the details are better than I expected. Definitely worth it if you’re a collector.' },
+              { name: 'Raylene Johnson – Chicago', text: 'I’ve been wanting the Attitude Era Women’s Championship for years. The delivery took about a week longer than expected, but once it arrived, I was really happy with it. The leather strap feels so much better than the usual replicas.' },
+              { name: 'Emin Mehrabi – UAE', text: 'I asked for a custom belt to use for my company events, and they delivered exactly what I had in mind. The design was spot on and it was finished in about 3 weeks, which was faster than I thought.' },
+              { name: 'Christon Andrew – Houston, Texas', text: 'I went for the 2013 WWE Championship with three different Shield side plates. The belts are heavy, the leather feels real, and the plates look sharp. Honestly, it’s a great addition to my collection.' },
+              { name: 'Madi Wilson – Australia', text: 'I ordered the WWF Attitude Heavyweight Championship and it showed up in perfect condition. It even came in a proper belt bag. The weight and shine are just right.' },
+            ].map((t, i) => (
+              <motion.blockquote key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-xl p-6 shadow">
+                <div className="flex items-center gap-2 text-black mb-3"><Quote className="w-4 h-4" /><span className="font-semibold">{t.name}</span><span className="ml-auto flex items-center gap-1 text-green-600 text-sm"><BadgeCheck className="w-4 h-4" /> Verified Buyer</span></div>
+                <p className="text-gray-700">{t.text}</p>
+              </motion.blockquote>
+            ))}
+          </div>
         </div>
       </section>
 
       <Footer />
       <CartSidebar />
+      <ImageLightbox src={lightbox} onClose={() => setLightbox(null)} />
     </div>
   );
 }
