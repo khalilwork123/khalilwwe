@@ -30,7 +30,7 @@ export const BrandHighlights = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {brands.map((brand, index) => (
-            <a href={brand.href} target="_blank" rel="noopener noreferrer">
+            <a key={brand.name} href={brand.href} target="_blank" rel="noopener noreferrer">
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
