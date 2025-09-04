@@ -21,7 +21,7 @@ export const Footer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-black text-white py-12 px-6"
+      className="bg-black text-white py-12 px-6 font-space"
     >
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -47,7 +47,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 BURNITDOWNYT. All rights reserved.</p>
+          <p>&copy; 2025 BURNITDOWNYT. All rights reserved.</p>
         </div>
       </div>
     </motion.footer>
