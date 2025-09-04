@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 export const BrandHighlights = () => {
   const brands = [
-    { name: 'WWE 2K', color: 'bg-red-600', textColor: 'text-white', href: 'https://www.facebook.com/share/g/1FNLn37Fvm/?mibextid=wwXIfr' },
-    { name: 'YouTube', color: 'bg-white', textColor: 'text-red-600', border: true, href: 'https://youtube.com/@burnitdownyt?si=M1570QuonyesV4R-' },
-    { name: 'Instagram', color: 'bg-black', textColor: 'text-white', href: 'https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr' },
-    { name: 'Instagram Store', color: 'bg-purple-900', textColor: 'text-white', href: 'https://www.instagram.com/burnitdown.store?igsh=MWc0aDhpZTd0b3dudA%3D%3D&utm_source=qr' },
+    { name: 'WWE 2K', img: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F3101a3f5d7bd4e10bedd39196a5d9890?format=webp&width=800', href: 'https://www.facebook.com/share/g/1FNLn37Fvm/?mibextid=wwXIfr' },
+    { name: 'YouTube', img: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Faf0673acfb604e8889a2ddffe176ca96?format=webp&width=800', href: 'https://youtube.com/@burnitdownyt?si=M1570QuonyesV4R-' },
+    { name: 'Instagram Store', img: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F31dc816c340147fc8fd8f25ce3164b15?format=webp&width=800', href: 'https://www.instagram.com/burnitdown.store?igsh=MWc0aDhpZTd0b3dudA%3D%3D&utm_source=qr' },
+    { name: 'Facebook', img: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc827988ce75f45f29224bc0cfcf9cb4c?format=webp&width=800', href: 'https://www.facebook.com/share/g/1FNLn37Fvm/?mibextid=wwXIfr' },
   ];
 
   return (
