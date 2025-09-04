@@ -102,7 +102,10 @@ export default function Cart() {
                   />
                   
                   <div className="flex-1">
-                    <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
+                    <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
+                    {item.customRequest && (
+                      <p className="text-sm text-gray-600 mb-1">Custom: {item.customRequest}</p>
+                    )}
                     <p className="text-black font-bold text-xl">
                       ${item.price.toLocaleString()}.00
                     </p>
