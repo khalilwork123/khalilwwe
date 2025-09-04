@@ -3,12 +3,16 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  images?: string[];
   isHot?: boolean;
   description: string;
+  details?: string[];
+  soldOut?: boolean;
 }
 
 export interface CartItem extends Product {
   quantity: number;
+  customRequest?: string;
 }
 
 export interface CheckoutData {
