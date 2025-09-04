@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
+import ImageLightbox from '@/components/ImageLightbox';
 
 interface ProductModalProps {
   product: Product | null;
@@ -16,6 +17,7 @@ interface ProductModalProps {
 export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
   const { addItem } = useCart();
   const [customRequest, setCustomRequest] = useState('');
+  const [lightbox, setLightbox] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
@@ -73,14 +75,14 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Product Images */}
                   <div className="space-y-3">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer" onClick={() => setLightbox((product.images && product.images[0]) || product.image)}>
                       <img
                         src={(product.images && product.images[0]) || product.image}
                         alt={product.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block cursor-pointer" onClick={() => setLightbox((product.images && product.images[1]) || product.image)}>
                       <img
                         src={(product.images && product.images[1]) || product.image}
                         alt={product.name}
@@ -144,6 +146,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               </div>
             </motion.div>
           </motion.div>
+          <ImageLightbox src={lightbox} onClose={() => setLightbox(null)} />
         </>
       )}
     </AnimatePresence>
