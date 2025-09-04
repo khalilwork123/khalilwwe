@@ -668,7 +668,7 @@ export const MERCH_PRODUCTS = [
     id: 'm1',
     name: 'WWE RAW T-shirt',
     price: 30,
-    image: FallbackIMG,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa852db6d2da44c528c733d84aa5b06e5?format=webp&width=800',
     color: 'red',
     soldOut: true
   },
@@ -676,7 +676,7 @@ export const MERCH_PRODUCTS = [
     id: 'm2',
     name: 'WWE SmackDown T-shirt',
     price: 30,
-    image: FallbackIMG,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F856c2b06280a48559713850d8158e33c?format=webp&width=800',
     color: 'blue',
     soldOut: true
   },
@@ -684,7 +684,7 @@ export const MERCH_PRODUCTS = [
     id: 'm3',
     name: 'WWE NXT T-shirt',
     price: 30,
-    image: FallbackIMG,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F98893064804f4644814c79c0fd474446?format=webp&width=800',
     color: 'black',
     soldOut: true
   },
@@ -692,7 +692,7 @@ export const MERCH_PRODUCTS = [
     id: 'm4',
     name: 'WWE RAW Black T-shirt',
     price: 30,
-    image: FallbackIMG,
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F69659b68456a4710a7eaa03bc5564ea1?format=webp&width=800',
     color: 'black',
     soldOut: true
   }
