@@ -56,15 +56,18 @@ export const MerchSection = () => {
               <h3 className="font-semibold text-sm mb-2">{item.name}</h3>
               <div className="text-lg font-bold mb-3">${item.price.toLocaleString()}.00</div>
               <Button
-                disabled={Boolean((item as any).soldOut)}
                 onClick={() => {
+                  if ((item as any).soldOut) {
+                    toast.error('Sold out');
+                    return;
+                  }
                   addItem({ id: item.id as any, name: (item as any).name, price: (item as any).price, image: (item as any).image, description: 'Merch item' });
                   toast.success('Added to cart', {
                     action: { label: 'Go to cart', onClick: () => navigate('/cart') },
                     cancel: { label: 'Continue shopping' }
                   });
                 }}
-                className="w-full bg-black disabled:opacity-60 hover:bg-white hover:text-black"
+                className="w-full bg-black hover:bg-white hover:text-black"
               >
                 {(item as any).soldOut ? 'Sold Out' : 'Add to Cart'}
               </Button>
