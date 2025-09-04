@@ -60,7 +60,7 @@ export const MerchSection = () => {
                 onClick={() => {
                   addItem({ id: item.id as any, name: (item as any).name, price: (item as any).price, image: (item as any).image, description: 'Merch item' });
                   toast.success('Added to cart', {
-                    action: { label: 'View cart', onClick: () => navigate('/cart') },
+                    action: { label: 'Go to cart', onClick: () => navigate('/cart') },
                     cancel: { label: 'Continue shopping' }
                   });
                 }}
