@@ -1,7 +1,6 @@
 import path from "path";
 import "dotenv/config";
-import * as express from "express";
-import express__default from "express";
+import express from "express";
 import cors from "cors";
 const handleDemo = (req, res) => {
   const response = {
@@ -10,10 +9,10 @@ const handleDemo = (req, res) => {
   res.status(200).json(response);
 };
 function createServer() {
-  const app2 = express__default();
+  const app2 = express();
   app2.use(cors());
-  app2.use(express__default.json());
-  app2.use(express__default.urlencoded({ extended: true }));
+  app2.use(express.json());
+  app2.use(express.urlencoded({ extended: true }));
   app2.get("/api/ping", (_req, res) => {
     const ping = process.env.PING_MESSAGE ?? "ping";
     res.json({ message: ping });
@@ -26,7 +25,7 @@ const port = process.env.PORT || 3e3;
 const __dirname = import.meta.dirname;
 const distPath = path.join(__dirname, "../spa");
 app.use(express.static(distPath));
-app.get("*", (req, res) => {
+app.get("(.*)", (req, res) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
     return res.status(404).json({ error: "API endpoint not found" });
   }

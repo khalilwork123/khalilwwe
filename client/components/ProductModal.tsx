@@ -1,8 +1,12 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import { Product } from '@shared/products';
-import { useCart } from '@/contexts/CartContext';
-import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { Product } from "@shared/products";
+import { useCart } from "@/contexts/CartContext";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
+import ImageLightbox from "@/components/ImageLightbox";
 
 interface ProductModalProps {
   product: Product | null;
@@ -10,12 +14,29 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
-export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
+export const ProductModal = ({
+  product,
+  isOpen,
+  onClose,
+}: ProductModalProps) => {
   const { addItem } = useCart();
+  const [customRequest, setCustomRequest] = useState("");
+  const [lightbox, setLightbox] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     if (product) {
-      addItem(product);
+      addItem(product, customRequest.trim() ? customRequest.trim() : undefined);
+      toast.success("Added to cart", {
+        action: {
+          label: "Go to cart",
+          onClick: () => navigate("/cart"),
+        },
+        cancel: {
+          label: "Continue shopping",
+          onClick: () => onClose(),
+        },
+      });
       onClose();
     }
   };
@@ -56,13 +77,42 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               {/* Content */}
               <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Product Image */}
-                  <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                    />
+                  {/* Product Images */}
+                  <div className="space-y-3">
+                    <div
+                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer"
+                      onClick={() =>
+                        setLightbox(
+                          (product.images && product.images[0]) ||
+                            product.image,
+                        )
+                      }
+                    >
+                      <img
+                        src={
+                          (product.images && product.images[0]) || product.image
+                        }
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block cursor-pointer"
+                      onClick={() =>
+                        setLightbox(
+                          (product.images && product.images[1]) ||
+                            product.image,
+                        )
+                      }
+                    >
+                      <img
+                        src={
+                          (product.images && product.images[1]) || product.image
+                        }
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     {product.isHot && (
                       <div className="absolute top-2 left-2 bg-black text-white px-2 py-1 rounded text-xs font-bold">
                         HOT
@@ -73,33 +123,37 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                   {/* Product Info */}
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
-                      <p className="text-gray-600 mb-4">{product.description}</p>
+                      <h3 className="text-2xl font-bold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {product.description}
+                      </p>
                     </div>
 
                     <div className="text-3xl font-bold text-black">
                       ${product.price.toLocaleString()}.00
                     </div>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold">Features:</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li>• Official WWE Licensed Product</li>
-                        <li>• Premium Quality Materials</li>
-                        <li>• Authentic Design Details</li>
-                        <li>• Perfect for Collectors</li>
-                        <li>• Comes with Certificate of Authenticity</li>
-                      </ul>
-                    </div>
+                    {product.details && product.details.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold">Details:</h4>
+                        <ul className="text-gray-600 space-y-1">
+                          {product.details.map((d, i) => (
+                            <li key={i}>• {d}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     <div className="space-y-2">
-                      <h4 className="font-semibold">Specifications:</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li>• Material: Zinc Alloy & Leather</li>
-                        <li>• Size: Adult (adjustable)</li>
-                        <li>• Weight: Approximately 2-3 lbs</li>
-                        <li>• Finish: Gold/Silver plated</li>
-                      </ul>
+                      <h4 className="font-semibold">Custom design request</h4>
+                      <textarea
+                        value={customRequest}
+                        onChange={(e) => setCustomRequest(e.target.value)}
+                        placeholder="Describe your custom logo, text, colors, etc."
+                        className="w-full border rounded-md p-3 min-h-24"
+                      />
                     </div>
 
                     <motion.div
@@ -107,11 +161,14 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                       whileTap={{ scale: 0.98 }}
                       className="pt-4"
                     >
-                      <Button 
+                      <Button
                         onClick={handleAddToCart}
-                        className="w-full bg-black hover:bg-gray-800 text-white text-lg py-6"
+                        disabled={product.soldOut}
+                        className="w-full bg-black disabled:opacity-60 hover:bg-gray-800 text-white text-lg py-6"
                       >
-                        Add to Cart - ${product.price.toLocaleString()}.00
+                        {product.soldOut
+                          ? "Sold Out"
+                          : `Add to Cart - $${product.price.toLocaleString()}.00`}
                       </Button>
                     </motion.div>
                   </div>
@@ -119,6 +176,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               </div>
             </motion.div>
           </motion.div>
+          <ImageLightbox src={lightbox} onClose={() => setLightbox(null)} />
         </>
       )}
     </AnimatePresence>
