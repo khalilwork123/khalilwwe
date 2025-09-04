@@ -47,8 +47,8 @@ export const Header = () => {
           <Link to="#" className="hover:text-gray-600 transition-colors text-sm">Latest News</Link>
           <button onClick={() => scrollTo('merch')} className="hover:text-gray-600 transition-colors text-sm">Merch</button>
           <Link to="/info" className="hover:text-gray-600 transition-colors text-sm">Info</Link>
-          <Link to="/media-kit" className="hover:text-gray-600 transition-colors text-sm">Media Kit</Link>
-          <Link to="#" className="hover:text-gray-600 transition-colors text-sm">Contact Us</Link>
+          <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Media Kit</a>
+          <Link to="/contact" className="hover:text-gray-600 transition-colors text-sm">Contact Us</Link>
 
           <div className="flex items-center gap-3 ml-2">
             <div className="flex items-center gap-2 border rounded-full px-3 py-1">
