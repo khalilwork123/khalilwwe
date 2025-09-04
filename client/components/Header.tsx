@@ -30,7 +30,7 @@ export const Header = () => {
       transition={{ duration: 0.5 }}
       className="bg-white text-black py-4 px-6 border-b border-gray-200"
     >
-      <div className="container mx-auto flex items-center justify-between gap-6">
+      <div className="container mx-auto flex items-center justify-between gap-6 font-space">
         {/* Left - Logo */}
         <a href="/" aria-label="Home" className="flex items-center" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>
           <img
@@ -44,7 +44,7 @@ export const Header = () => {
         <nav className="flex items-center gap-6 ml-auto">
           <Link to="/" className="hover:text-gray-600 transition-colors text-sm">Home</Link>
           <button onClick={() => scrollTo('shop')} className="hover:text-gray-600 transition-colors text-sm">Shop</button>
-          <Link to="#" className="hover:text-gray-600 transition-colors text-sm">Latest News</Link>
+          <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Latest News</a>
           <button onClick={() => scrollTo('merch')} className="hover:text-gray-600 transition-colors text-sm">Merch</button>
           <Link to="/info" className="hover:text-gray-600 transition-colors text-sm">Info</Link>
           <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Media Kit</a>
