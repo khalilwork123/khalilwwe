@@ -1,40 +1,42 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus } from 'lucide-react';
-import { InfoSection } from '@/components/InfoSection';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { CartSidebar } from '@/components/CartSidebar';
-import { useCart } from '@/contexts/CartContext';
-import { VOUCHERS } from '@shared/products';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Trash2, Plus, Minus } from "lucide-react";
+import { InfoSection } from "@/components/InfoSection";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { CartSidebar } from "@/components/CartSidebar";
+import { useCart } from "@/contexts/CartContext";
+import { VOUCHERS } from "@shared/products";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function Cart() {
-  const { 
-    items, 
-    updateQuantity, 
-    removeItem, 
-    getSubtotal, 
-    getDiscount, 
+  const {
+    items,
+    updateQuantity,
+    removeItem,
+    getSubtotal,
+    getDiscount,
     getTotal,
     appliedVoucher,
     applyVoucher,
-    removeVoucher
+    removeVoucher,
   } = useCart();
 
-  const [voucherCode, setVoucherCode] = useState('');
-  const [voucherError, setVoucherError] = useState('');
+  const [voucherCode, setVoucherCode] = useState("");
+  const [voucherError, setVoucherError] = useState("");
 
   const handleApplyVoucher = () => {
-    const voucher = VOUCHERS.find(v => v.code.toLowerCase() === voucherCode.toLowerCase());
+    const voucher = VOUCHERS.find(
+      (v) => v.code.toLowerCase() === voucherCode.toLowerCase(),
+    );
     if (voucher) {
       applyVoucher(voucher);
-      setVoucherCode('');
-      setVoucherError('');
+      setVoucherCode("");
+      setVoucherError("");
     } else {
-      setVoucherError('Invalid voucher code');
+      setVoucherError("Invalid voucher code");
     }
   };
 
@@ -50,7 +52,9 @@ export default function Cart() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl font-bold mb-8">Your Cart is Empty</h1>
-            <p className="text-gray-600 mb-8">Add some WWE championship belts to get started!</p>
+            <p className="text-gray-600 mb-8">
+              Add some WWE championship belts to get started!
+            </p>
             <Link to="/">
               <Button className="bg-black hover:bg-white hover:text-black">
                 Continue Shopping
@@ -95,22 +99,24 @@ export default function Cart() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4"
                 >
-                  <img 
-                    src={item.image} 
+                  <img
+                    src={item.image}
                     alt={item.name}
                     className="w-20 h-20 object-cover rounded"
                   />
-                  
+
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
                     {item.customRequest && (
-                      <p className="text-sm text-gray-600 mb-1">Custom: {item.customRequest}</p>
+                      <p className="text-sm text-gray-600 mb-1">
+                        Custom: {item.customRequest}
+                      </p>
                     )}
                     <p className="text-black font-bold text-xl">
                       ${item.price.toLocaleString()}.00
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -126,7 +132,7 @@ export default function Cart() {
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
-                  
+
                   <button
                     onClick={() => removeItem(item.id)}
                     className="p-2 text-red-500 hover:bg-red-50 rounded"
@@ -147,10 +153,12 @@ export default function Cart() {
               className="bg-white rounded-lg shadow-md p-6 sticky top-6"
             >
               <h2 className="text-xl font-bold mb-6">Order Summary</h2>
-              
+
               {/* Voucher Section */}
               <div className="mb-6">
-                <label className="block text-sm font-medium mb-2">Voucher Code</label>
+                <label className="block text-sm font-medium mb-2">
+                  Voucher Code
+                </label>
                 {appliedVoucher ? (
                   <div className="flex items-center justify-between bg-green-50 p-3 rounded">
                     <span className="text-green-700 font-medium">
@@ -172,10 +180,7 @@ export default function Cart() {
                         placeholder="Enter voucher code"
                         className="flex-1"
                       />
-                      <Button 
-                        onClick={handleApplyVoucher}
-                        variant="outline"
-                      >
+                      <Button onClick={handleApplyVoucher} variant="outline">
                         Apply
                       </Button>
                     </div>
@@ -201,7 +206,9 @@ export default function Cart() {
                 <hr />
                 <div className="flex justify-between text-xl font-bold">
                   <span>Total:</span>
-                  <span className="text-black">${getTotal().toLocaleString()}.00</span>
+                  <span className="text-black">
+                    ${getTotal().toLocaleString()}.00
+                  </span>
                 </div>
               </div>
 

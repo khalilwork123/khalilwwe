@@ -1,12 +1,12 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import { Product } from '@shared/products';
-import { useCart } from '@/contexts/CartContext';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
-import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
-import ImageLightbox from '@/components/ImageLightbox';
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { Product } from "@shared/products";
+import { useCart } from "@/contexts/CartContext";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
+import ImageLightbox from "@/components/ImageLightbox";
 
 interface ProductModalProps {
   product: Product | null;
@@ -14,24 +14,28 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
-export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
+export const ProductModal = ({
+  product,
+  isOpen,
+  onClose,
+}: ProductModalProps) => {
   const { addItem } = useCart();
-  const [customRequest, setCustomRequest] = useState('');
+  const [customRequest, setCustomRequest] = useState("");
   const [lightbox, setLightbox] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     if (product) {
       addItem(product, customRequest.trim() ? customRequest.trim() : undefined);
-      toast.success('Added to cart', {
+      toast.success("Added to cart", {
         action: {
-          label: 'Go to cart',
-          onClick: () => navigate('/cart')
+          label: "Go to cart",
+          onClick: () => navigate("/cart"),
         },
         cancel: {
-          label: 'Continue shopping',
-          onClick: () => onClose()
-        }
+          label: "Continue shopping",
+          onClick: () => onClose(),
+        },
       });
       onClose();
     }
@@ -75,16 +79,36 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Product Images */}
                   <div className="space-y-3">
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer" onClick={() => setLightbox((product.images && product.images[0]) || product.image)}>
+                    <div
+                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer"
+                      onClick={() =>
+                        setLightbox(
+                          (product.images && product.images[0]) ||
+                            product.image,
+                        )
+                      }
+                    >
                       <img
-                        src={(product.images && product.images[0]) || product.image}
+                        src={
+                          (product.images && product.images[0]) || product.image
+                        }
                         alt={product.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block cursor-pointer" onClick={() => setLightbox((product.images && product.images[1]) || product.image)}>
+                    <div
+                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block cursor-pointer"
+                      onClick={() =>
+                        setLightbox(
+                          (product.images && product.images[1]) ||
+                            product.image,
+                        )
+                      }
+                    >
                       <img
-                        src={(product.images && product.images[1]) || product.image}
+                        src={
+                          (product.images && product.images[1]) || product.image
+                        }
                         alt={product.name}
                         className="w-full h-full object-cover"
                       />
@@ -99,8 +123,12 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                   {/* Product Info */}
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
-                      <p className="text-gray-600 mb-4">{product.description}</p>
+                      <h3 className="text-2xl font-bold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {product.description}
+                      </p>
                     </div>
 
                     <div className="text-3xl font-bold text-black">
@@ -138,7 +166,9 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                         disabled={product.soldOut}
                         className="w-full bg-black disabled:opacity-60 hover:bg-gray-800 text-white text-lg py-6"
                       >
-                        {product.soldOut ? 'Sold Out' : `Add to Cart - $${product.price.toLocaleString()}.00`}
+                        {product.soldOut
+                          ? "Sold Out"
+                          : `Add to Cart - $${product.price.toLocaleString()}.00`}
                       </Button>
                     </motion.div>
                   </div>

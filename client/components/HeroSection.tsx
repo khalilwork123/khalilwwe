@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
   return (
@@ -7,9 +7,9 @@ export const HeroSection = () => {
       className="bg-black text-white px-6 relative overflow-hidden h-[80vh]"
       style={{
         backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbb05f806738f41afb6c3a0b51a1ffac0?format=webp&width=1200')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Dark overlay for better text readability */}
@@ -22,7 +22,11 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mr-6"
         >
-          <a href="https://championshipbeltmaker.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://championshipbeltmaker.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               size="lg"
               className="bg-white text-black hover:bg-gray-200 transition-all duration-300 px-8 py-6 text-lg"

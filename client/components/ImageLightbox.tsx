@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
+import { useEffect } from "react";
 
 interface Props {
   src: string | null;
@@ -10,9 +10,9 @@ interface Props {
 
 export default function ImageLightbox({ src, alt, onClose }: Props) {
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
   return (
@@ -31,7 +31,7 @@ export default function ImageLightbox({ src, alt, onClose }: Props) {
             exit={{ scale: 0.95 }}
             onClick={(e) => e.stopPropagation()}
             src={src}
-            alt={alt || ''}
+            alt={alt || ""}
             className="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-2xl"
           />
           <button

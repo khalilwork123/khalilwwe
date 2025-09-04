@@ -1,8 +1,8 @@
-import { ShoppingCart, Search } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '@/contexts/CartContext';
-import { useSearch } from '@/contexts/SearchContext';
-import { motion } from 'framer-motion';
+import { ShoppingCart, Search } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
+import { useSearch } from "@/contexts/SearchContext";
+import { motion } from "framer-motion";
 
 export const Header = () => {
   const { getItemCount, toggleCart } = useCart();
@@ -13,12 +13,12 @@ export const Header = () => {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      navigate('/');
+      navigate("/");
       setTimeout(() => {
         const el2 = document.getElementById(id);
-        if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (el2) el2.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 0);
     }
   };
@@ -32,7 +32,15 @@ export const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between gap-6 font-space">
         {/* Left - Logo */}
-        <a href="/" aria-label="Home" className="flex items-center" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>
+        <a
+          href="/"
+          aria-label="Home"
+          className="flex items-center"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/";
+          }}
+        >
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"
             alt="BURNITDOWNYT"
@@ -42,13 +50,52 @@ export const Header = () => {
 
         {/* Center/Right - Navigation */}
         <nav className="flex items-center gap-6 ml-auto">
-          <Link to="/" className="hover:text-gray-600 transition-colors text-sm">Home</Link>
-          <button onClick={() => scrollTo('shop')} className="hover:text-gray-600 transition-colors text-sm">Shop</button>
-          <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Latest News</a>
-          <button onClick={() => scrollTo('merch')} className="hover:text-gray-600 transition-colors text-sm">Merch</button>
-          <Link to="/info" className="hover:text-gray-600 transition-colors text-sm">Info</Link>
-          <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Media Kit</a>
-          <Link to="/contact" className="hover:text-gray-600 transition-colors text-sm">Contact Us</Link>
+          <Link
+            to="/"
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Home
+          </Link>
+          <button
+            onClick={() => scrollTo("shop")}
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Shop
+          </button>
+          <a
+            href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Latest News
+          </a>
+          <button
+            onClick={() => scrollTo("merch")}
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Merch
+          </button>
+          <Link
+            to="/info"
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Info
+          </Link>
+          <a
+            href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Media Kit
+          </a>
+          <Link
+            to="/contact"
+            className="hover:text-gray-600 transition-colors text-sm"
+          >
+            Contact Us
+          </Link>
 
           <div className="flex items-center gap-3 ml-2">
             <div className="flex items-center gap-2 border rounded-full px-3 py-1">
@@ -57,7 +104,7 @@ export const Header = () => {
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
-                  scrollTo('shop');
+                  scrollTo("shop");
                 }}
                 placeholder="Search products"
                 className="outline-none text-sm w-32 md:w-48"
