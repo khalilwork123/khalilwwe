@@ -8,7 +8,7 @@ interface CartState {
 }
 
 type CartAction =
-  | { type: 'ADD_ITEM'; payload: Product }
+  | { type: 'ADD_ITEM'; payload: { product: Product; customRequest?: string } }
   | { type: 'REMOVE_ITEM'; payload: string }
   | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number } }
   | { type: 'APPLY_VOUCHER'; payload: Voucher }
@@ -18,7 +18,7 @@ type CartAction =
   | { type: 'LOAD_CART'; payload: CartState };
 
 interface CartContextType extends CartState {
-  addItem: (product: Product) => void;
+  addItem: (product: Product, customRequest?: string) => void;
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   applyVoucher: (voucher: Voucher) => void;
@@ -36,12 +36,13 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_ITEM': {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+      const { product, customRequest } = action.payload;
+      const existingItem = state.items.find(item => item.id === product.id && item.customRequest === customRequest);
       if (existingItem) {
         return {
           ...state,
           items: state.items.map(item =>
-            item.id === action.payload.id
+            item.id === product.id && item.customRequest === customRequest
               ? { ...item, quantity: item.quantity + 1 }
               : item
           ),
@@ -49,7 +50,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       }
       return {
         ...state,
-        items: [...state.items, { ...action.payload, quantity: 1 }],
+        items: [...state.items, { ...product, quantity: 1, customRequest }],
       };
     }
     case 'REMOVE_ITEM':
@@ -127,8 +128,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('wwe-cart', JSON.stringify(state));
   }, [state]);
 
-  const addItem = (product: Product) => {
-    dispatch({ type: 'ADD_ITEM', payload: product });
+  const addItem = (product: Product, customRequest?: string) => {
+    dispatch({ type: 'ADD_ITEM', payload: { product, customRequest } });
   };
 
   const removeItem = (productId: string) => {
