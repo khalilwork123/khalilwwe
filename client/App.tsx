@@ -15,6 +15,7 @@ import Bill from "./pages/Bill";
 import NotFound from "./pages/NotFound";
 import Info from "./pages/Info";
 import MediaKit from "./pages/MediaKit";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
