@@ -86,6 +86,9 @@ export default function Bill() {
                   <td className="border border-gray-300 p-3">
                     <div className="font-semibold">{item.name}</div>
                     <div className="text-sm text-gray-600">{item.description}</div>
+                    {item.customRequest && (
+                      <div className="text-sm text-gray-700"><strong>Custom:</strong> {item.customRequest}</div>
+                    )}
                   </td>
                   <td className="border border-gray-300 p-3 text-center">{item.quantity}</td>
                   <td className="border border-gray-300 p-3 text-right">${item.price.toLocaleString()}.00</td>
@@ -140,8 +143,9 @@ export default function Bill() {
           <p className="font-bold text-lg mb-2">Thank you for your order!</p>
           <p className="text-gray-600">For questions about your order, please contact us with your order number.</p>
           <div className="mt-4 space-y-1">
-            <p><strong>Email:</strong> orders@burnitdownyt.com</p>
-            <p><strong>Website:</strong> www.burnitdownyt.com</p>
+            <p><strong>Phone:</strong> +1 929 6129 615</p>
+            <p><strong>Address:</strong> 719 2nd Ave, New York NY 10016</p>
+            <p><strong>Email:</strong> burnitdownyt@gmail.com</p>
           </div>
         </div>
 
