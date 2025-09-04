@@ -36,14 +36,9 @@ export const BrandHighlights = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className={`
-                  aspect-square rounded-lg flex items-center justify-center
-                  ${brand.color} ${brand.textColor}
-                  ${brand.border ? 'border-2 border-red-600' : ''}
-                  cursor-pointer
-                `}
+                className="aspect-square rounded-lg bg-white flex items-center justify-center overflow-hidden cursor-pointer shadow"
               >
-                <span className="text-xl font-bold">{brand.name}</span>
+                <img src={brand.img} alt={brand.name} className="object-contain w-full h-full p-4" />
               </motion.div>
             </a>
           ))}
