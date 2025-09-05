@@ -1,13 +1,32 @@
-import { motion } from "framer-motion";
-import { MERCH_PRODUCTS } from "@shared/products";
-import { useCart } from "@/contexts/CartContext";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { MERCH_PRODUCTS, Product } from '@shared/products';
+import { Button } from '@/components/ui/button';
+import { ProductModal } from '@/components/ProductModal';
+import { useState } from 'react';
 
 export const MerchSection = () => {
-  const { addItem } = useCart();
-  const navigate = useNavigate();
+  const [selected, setSelected] = useState<Product | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = (item: (typeof MERCH_PRODUCTS)[number]) => {
+    const p: Product = {
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image: item.image,
+      images: [item.image, item.image],
+      description: 'Official WWE merch',
+      soldOut: true,
+    };
+    setSelected(p);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelected(null);
+  };
+
   return (
     <section id="merch" className="py-16 px-6 bg-white">
       <div className="container mx-auto">
@@ -18,11 +37,7 @@ export const MerchSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4">WWE MERCH</h2>
-          <p className="text-gray-600">
-            Step into the spotlight with custom WWE merch!
-          </p>
-
-          {/* Decorative dots */}
+          <p className="text-gray-600">Step into the spotlight with custom WWE merch!</p>
           <div className="flex justify-center space-x-2 mt-4">
             <div className="w-2 h-2 bg-black rounded-full"></div>
             <div className="w-2 h-2 bg-black rounded-full"></div>
@@ -46,50 +61,21 @@ export const MerchSection = () => {
               className="bg-gray-50 rounded-lg p-6 text-center overflow-hidden relative"
             >
               {item.soldOut && (
-                <div className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">
-                  SOLD OUT
-                </div>
+                <div className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">SOLD OUT</div>
               )}
               <div className="aspect-square bg-gray-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                />
+                <img src={item.image} alt={item.name} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-semibold text-sm mb-2">{item.name}</h3>
-              <div className="text-lg font-bold mb-3">
-                ${item.price.toLocaleString()}.00
-              </div>
-              <Button
-                onClick={() => {
-                  if ((item as any).soldOut) {
-                    toast.error("Sold out");
-                    return;
-                  }
-                  addItem({
-                    id: item.id as any,
-                    name: (item as any).name,
-                    price: (item as any).price,
-                    image: (item as any).image,
-                    description: "Merch item",
-                  });
-                  toast.success("Added to cart", {
-                    action: {
-                      label: "Go to cart",
-                      onClick: () => navigate("/cart"),
-                    },
-                    cancel: { label: "Continue shopping" },
-                  });
-                }}
-                className="w-full bg-black hover:bg-white hover:text-black"
-              >
-                {(item as any).soldOut ? "Sold Out" : "Add to Cart"}
+              <div className="text-lg font-bold mb-3">${item.price.toLocaleString()}.00</div>
+              <Button onClick={() => openModal(item)} className="w-full bg-black hover:bg-white hover:text-black">
+                View Details
               </Button>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      <ProductModal product={selected} isOpen={isOpen} onClose={closeModal} />
     </section>
   );
 };
