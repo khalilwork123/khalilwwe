@@ -16,8 +16,14 @@ import ImageLightbox from "@/components/ImageLightbox";
 
 const LOGO =
   "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800";
-const SAMPLE =
-  "https://cdn.builder.io/api/v1/image/assets%2F7c7981c24ce04d2abcdbf111ce19775e%2Fd7ea3bbbcb4f4a6b8f11bad177507db5?format=webp&width=1600";
+const BANNER =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbd1552e34f2d44928b14ba09af97aa72?format=webp&width=1600";
+const DESIGN1 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fce264f89985544f7b62040385ee3ed62?format=webp&width=800";
+const DESIGN2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8f79e477e182446481c7b40d41f5cce7?format=webp&width=800";
+const DESIGN3 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F577e8a5898114753aa5613bbdf84727f?format=webp&width=800";
+const WHY1 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F076643af05d249eeb5fef9aa9be14291?format=webp&width=800";
+const WHY2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F025634f30d884a2bb84a271393075b3b?format=webp&width=800";
+const CUSTOMIZE_MAIN = DESIGN1;
 
 export default function Info() {
   const [lightbox, setLightbox] = useState<string | null>(null);
