@@ -24,7 +24,7 @@ export const Footer = () => {
       className="bg-black text-white py-12 px-6 font-space"
     >
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
@@ -98,14 +98,10 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
 
-        <div className="hidden lg:grid grid-cols-3 gap-8 mb-8">
-          <div></div>
-          <div></div>
           <div>
-            <h3 className="font-bold mb-2">Contact Details</h3>
-            <ul className="space-y-1 text-sm text-gray-300">
+            <h3 className="font-bold mb-4">Contact Details</h3>
+            <ul className="space-y-2 text-sm text-gray-300">
               <li>Phone: +1 929 6129 615</li>
               <li>Address: 719 2nd Ave, New York NY 10016</li>
               <li>Email: <a href="mailto:burnitdownyt@gmail.com" className="underline">burnitdownyt@gmail.com</a></li>
