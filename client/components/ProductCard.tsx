@@ -27,6 +27,7 @@ export const ProductCard = ({ product, index, onViewDetails }: ProductCardProps)
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
       </div>
@@ -47,7 +48,7 @@ export const ProductCard = ({ product, index, onViewDetails }: ProductCardProps)
             onClick={() => onViewDetails(product)}
             className="w-full bg-black hover:bg-white hover:text-black transition-all duration-300"
           >
-            Add to Cart
+            View Details
           </Button>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { CheckoutData, CartItem, Voucher } from '@shared/products';
+import { useEffect, useState } from "react";
+import { CheckoutData, CartItem, Voucher } from "@shared/products";
 
 interface OrderData extends CheckoutData {
   items: CartItem[];
@@ -14,7 +14,7 @@ export default function Bill() {
   const [orderData, setOrderData] = useState<OrderData | null>(null);
 
   useEffect(() => {
-    const storedOrder = localStorage.getItem('wwe-order');
+    const storedOrder = localStorage.getItem("wwe-order");
     if (storedOrder) {
       setOrderData(JSON.parse(storedOrder));
     }
@@ -34,11 +34,16 @@ export default function Bill() {
   const orderNumber = `WWE-${Date.now().toString().slice(-6)}`;
 
   return (
-    <div className="min-h-screen bg-white p-8" style={{ fontFamily: 'Arial, sans-serif' }}>
+    <div
+      className="min-h-screen bg-white p-8"
+      style={{ fontFamily: "Arial, sans-serif" }}
+    >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 border-b-2 border-black pb-6">
-          <h1 className="text-4xl font-bold mb-2" style={{ color: 'black' }}>BURNITDOWNYT</h1>
+          <h1 className="text-4xl font-bold mb-2" style={{ color: "black" }}>
+            BURNITDOWNYT
+          </h1>
           <h2 className="text-2xl font-bold">WWE CHAMPIONSHIP BELTS</h2>
           <p className="text-lg mt-2">Official WWE Merchandise Store</p>
         </div>
@@ -46,49 +51,86 @@ export default function Bill() {
         {/* Bill Information */}
         <div className="grid grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>BILL TO:</h3>
+            <h3 className="text-xl font-bold mb-4" style={{ color: "#28a745" }}>
+              BILL TO:
+            </h3>
             <div className="space-y-1">
               <p className="font-semibold">{orderData.name}</p>
               <p>{orderData.email}</p>
               <p>{orderData.shippingAddress.street}</p>
-              <p>{orderData.shippingAddress.city}, {orderData.shippingAddress.state}</p>
+              <p>
+                {orderData.shippingAddress.city},{" "}
+                {orderData.shippingAddress.state}
+              </p>
               <p>{orderData.shippingAddress.zipCode}</p>
               <p>{orderData.shippingAddress.country}</p>
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>ORDER DETAILS:</h3>
+            <h3 className="text-xl font-bold mb-4" style={{ color: "#28a745" }}>
+              ORDER DETAILS:
+            </h3>
             <div className="space-y-1">
-              <p><strong>Order Number:</strong> {orderNumber}</p>
-              <p><strong>Date:</strong> {new Date(orderData.orderDate).toLocaleDateString()}</p>
-              <p><strong>Payment Method:</strong> {orderData.paymentMethod}</p>
-              <p><strong>Status:</strong> <span style={{ color: '#28a745' }}>Pending Payment</span></p>
+              <p>
+                <strong>Order Number:</strong> {orderNumber}
+              </p>
+              <p>
+                <strong>Date:</strong>{" "}
+                {new Date(orderData.orderDate).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>Payment Method:</strong> {orderData.paymentMethod}
+              </p>
+              <p>
+                <strong>Status:</strong>{" "}
+                <span style={{ color: "#28a745" }}>Pending Payment</span>
+              </p>
             </div>
           </div>
         </div>
 
         {/* Items Table */}
         <div className="mb-8">
-          <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>ITEMS ORDERED:</h3>
+          <h3 className="text-xl font-bold mb-4" style={{ color: "#28a745" }}>
+            ITEMS ORDERED:
+          </h3>
           <table className="w-full border-collapse border border-gray-300">
             <thead>
-              <tr style={{ backgroundColor: '#f8f9fa' }}>
+              <tr style={{ backgroundColor: "#f8f9fa" }}>
                 <th className="border border-gray-300 p-3 text-left">Item</th>
-                <th className="border border-gray-300 p-3 text-center">Quantity</th>
-                <th className="border border-gray-300 p-3 text-right">Unit Price</th>
+                <th className="border border-gray-300 p-3 text-center">
+                  Quantity
+                </th>
+                <th className="border border-gray-300 p-3 text-right">
+                  Unit Price
+                </th>
                 <th className="border border-gray-300 p-3 text-right">Total</th>
               </tr>
             </thead>
             <tbody>
               {orderData.items.map((item, index) => (
-                <tr key={item.id} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                <tr
+                  key={item.id}
+                  className={index % 2 === 0 ? "bg-gray-50" : ""}
+                >
                   <td className="border border-gray-300 p-3">
                     <div className="font-semibold">{item.name}</div>
-                    <div className="text-sm text-gray-600">{item.description}</div>
+                    <div className="text-sm text-gray-600">
+                      {item.description}
+                    </div>
+                    {item.customRequest && (
+                      <div className="text-sm text-gray-700">
+                        <strong>Custom:</strong> {item.customRequest}
+                      </div>
+                    )}
                   </td>
-                  <td className="border border-gray-300 p-3 text-center">{item.quantity}</td>
-                  <td className="border border-gray-300 p-3 text-right">${item.price.toLocaleString()}.00</td>
+                  <td className="border border-gray-300 p-3 text-center">
+                    {item.quantity}
+                  </td>
+                  <td className="border border-gray-300 p-3 text-right">
+                    ${item.price.toLocaleString()}.00
+                  </td>
                   <td className="border border-gray-300 p-3 text-right font-semibold">
                     ${(item.price * item.quantity).toLocaleString()}.00
                   </td>
@@ -107,28 +149,39 @@ export default function Bill() {
                 <span>${orderData.subtotal.toLocaleString()}.00</span>
               </div>
               {orderData.appliedVoucher && (
-                <div className="flex justify-between py-2 border-b" style={{ color: '#28a745' }}>
+                <div
+                  className="flex justify-between py-2 border-b"
+                  style={{ color: "#28a745" }}
+                >
                   <span>Discount ({orderData.appliedVoucher.code}):</span>
                   <span>-${orderData.discount.toLocaleString()}.00</span>
                 </div>
               )}
               <div className="flex justify-between py-3 border-t-2 border-black text-xl font-bold">
                 <span>TOTAL:</span>
-                <span style={{ color: 'black' }}>${orderData.total.toLocaleString()}.00</span>
+                <span style={{ color: "black" }}>
+                  ${orderData.total.toLocaleString()}.00
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Instructions */}
-        <div className="border-2 border-red-500 bg-red-50 p-6 rounded mb-8">
-          <h3 className="text-xl font-bold mb-4" style={{ color: '#CC0000' }}>📸 PAYMENT INSTRUCTIONS</h3>
+        <div className="border-2 border-green-600 bg-green-50 p-6 rounded mb-8">
+          <h3 className="text-xl font-bold mb-4" style={{ color: "#28a745" }}>
+            📸 PAYMENT INSTRUCTIONS
+          </h3>
           <div className="space-y-2">
-            <p className="font-semibold">Please follow these steps to complete your order:</p>
+            <p className="font-semibold">
+              Please follow these steps to complete your order:
+            </p>
             <ol className="list-decimal list-inside space-y-1 ml-4">
               <li>Take a screenshot of this entire bill</li>
               <li>Send the screenshot to our payment team</li>
-              <li>Include your order number: <strong>{orderNumber}</strong></li>
+              <li>
+                Include your order number: <strong>{orderNumber}</strong>
+              </li>
               <li>Wait for payment instructions from our team</li>
               <li>Your order will be processed once payment is confirmed</li>
             </ol>
@@ -138,17 +191,31 @@ export default function Bill() {
         {/* Footer */}
         <div className="text-center border-t-2 border-black pt-6">
           <p className="font-bold text-lg mb-2">Thank you for your order!</p>
-          <p className="text-gray-600">For questions about your order, please contact us with your order number.</p>
+          <p className="text-gray-600">
+            For questions about your order, please contact us with your order
+            number.
+          </p>
           <div className="mt-4 space-y-1">
-            <p><strong>Email:</strong> orders@burnitdownyt.com</p>
-            <p><strong>Website:</strong> www.burnitdownyt.com</p>
+            <p>
+              <strong>Phone:</strong> +1 929 6129 615
+            </p>
+            <p>
+              <strong>Address:</strong> 719 2nd Ave, New York NY 10016
+            </p>
+            <p>
+              <strong>Email:</strong> burnitdownyt@gmail.com
+            </p>
           </div>
         </div>
 
         {/* Print Instructions */}
         <div className="fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 p-4 rounded shadow-lg max-w-sm">
           <p className="font-semibold mb-2">💡 Pro Tip:</p>
-          <p className="text-sm">Press <kbd className="bg-gray-200 px-1 rounded">Ctrl+P</kbd> (Windows) or <kbd className="bg-gray-200 px-1 rounded">Cmd+P</kbd> (Mac) to print or save as PDF.</p>
+          <p className="text-sm">
+            Press <kbd className="bg-gray-200 px-1 rounded">Ctrl+P</kbd>{" "}
+            (Windows) or <kbd className="bg-gray-200 px-1 rounded">Cmd+P</kbd>{" "}
+            (Mac) to print or save as PDF.
+          </p>
         </div>
       </div>
     </div>

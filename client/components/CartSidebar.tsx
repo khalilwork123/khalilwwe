@@ -1,18 +1,18 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useCart } from '@/contexts/CartContext';
-import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
+import { Button } from "@/components/ui/button";
 
 export const CartSidebar = () => {
-  const { 
-    items, 
-    isOpen, 
-    toggleCart, 
-    updateQuantity, 
-    removeItem, 
-    getSubtotal, 
-    getItemCount 
+  const {
+    items,
+    isOpen,
+    toggleCart,
+    updateQuantity,
+    removeItem,
+    getSubtotal,
+    getItemCount,
   } = useCart();
 
   return (
@@ -30,10 +30,10 @@ export const CartSidebar = () => {
 
           {/* Sidebar */}
           <motion.div
-            initial={{ x: '100%' }}
+            initial={{ x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
             className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl z-50 flex flex-col"
           >
             {/* Header */}
@@ -56,10 +56,7 @@ export const CartSidebar = () => {
                 <div className="text-center py-12">
                   <ShoppingBag className="w-16 h-16 mx-auto text-gray-300 mb-4" />
                   <p className="text-gray-500 mb-4">Your cart is empty</p>
-                  <Button 
-                    onClick={toggleCart}
-                    variant="outline"
-                  >
+                  <Button onClick={toggleCart} variant="outline">
                     Continue Shopping
                   </Button>
                 </div>
@@ -74,37 +71,48 @@ export const CartSidebar = () => {
                       exit={{ opacity: 0, y: -20 }}
                       className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg"
                     >
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.name}
                         className="w-16 h-16 object-cover rounded"
                       />
-                      
+
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium text-sm line-clamp-2 mb-1">
                           {item.name}
                         </h4>
+                        {item.customRequest && (
+                          <p className="text-xs text-gray-600 mb-1 line-clamp-2">
+                            Custom: {item.customRequest}
+                          </p>
+                        )}
                         <p className="font-bold text-black">
                           ${item.price.toLocaleString()}.00
                         </p>
                       </div>
-                      
+
                       <div className="flex items-center space-x-2">
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity - 1)
+                          }
                           className="p-1 rounded-full bg-gray-200 hover:bg-gray-300"
                         >
                           <Minus className="w-3 h-3" />
                         </button>
-                        <span className="font-semibold px-2">{item.quantity}</span>
+                        <span className="font-semibold px-2">
+                          {item.quantity}
+                        </span>
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity + 1)
+                          }
                           className="p-1 rounded-full bg-gray-200 hover:bg-gray-300"
                         >
                           <Plus className="w-3 h-3" />
                         </button>
                       </div>
-                      
+
                       <button
                         onClick={() => removeItem(item.id)}
                         className="p-2 text-red-500 hover:bg-red-50 rounded"
@@ -124,17 +132,14 @@ export const CartSidebar = () => {
                   <span>Total:</span>
                   <span>${getSubtotal().toLocaleString()}.00</span>
                 </div>
-                
+
                 <div className="space-y-3">
                   <Link to="/cart" onClick={toggleCart}>
-                    <Button 
-                      variant="outline" 
-                      className="w-full"
-                    >
+                    <Button variant="outline" className="w-full">
                       View Cart
                     </Button>
                   </Link>
-                  
+
                   <Link to="/checkout" onClick={toggleCart}>
                     <Button className="w-full bg-black hover:bg-gray-800">
                       Checkout
