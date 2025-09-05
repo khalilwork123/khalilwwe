@@ -23,7 +23,7 @@ const DESIGN2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349c
 const DESIGN3 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F577e8a5898114753aa5613bbdf84727f?format=webp&width=800";
 const WHY1 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F076643af05d249eeb5fef9aa9be14291?format=webp&width=800";
 const WHY2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F025634f30d884a2bb84a271393075b3b?format=webp&width=800";
-const CUSTOMIZE_MAIN = DESIGN1;
+const MATERIALS_MAIN = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc69d6387ff94425ba6160b527c6075fc?format=webp&width=1200";
 
 export default function Info() {
   const [lightbox, setLightbox] = useState<string | null>(null);
@@ -100,10 +100,10 @@ export default function Info() {
             </ul>
             <div
               className="mt-6 rounded-lg overflow-hidden cursor-pointer"
-              onClick={() => open(CUSTOMIZE_MAIN)}
+              onClick={() => open(MATERIALS_MAIN)}
             >
               <img
-                src={CUSTOMIZE_MAIN}
+                src={MATERIALS_MAIN}
                 alt="Detail"
                 loading="lazy"
                 className="w-full h-48 object-cover"
@@ -296,7 +296,7 @@ export default function Info() {
                 <div className="flex items-center gap-2 text-black mb-3">
                   <Quote className="w-4 h-4" />
                   <span className="font-semibold">{t.name}</span>
-                  <span className="ml-auto flex items-center gap-1 text-green-600 text-sm">
+                  <span className="ml-auto flex items-center gap-1 text-green-600 text-sm whitespace-nowrap">
                     <BadgeCheck className="w-4 h-4" /> Verified Buyer
                   </span>
                 </div>
