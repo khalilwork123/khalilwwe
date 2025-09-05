@@ -15,12 +15,12 @@ export const HeroSection = () => {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-      <div className="container mx-auto relative z-10 h-full flex items-center justify-end">
+      <div className="container mx-auto relative z-10 h-full flex items-end justify-center pb-10 md:items-center md:justify-end md:pb-0">
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mr-6"
+          className="mr-0 md:mr-6"
         >
           <a
             href="https://championshipbeltmaker.com"
