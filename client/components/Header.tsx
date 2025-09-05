@@ -147,14 +147,44 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         <nav className="flex md:hidden items-center gap-4 ml-auto text-sm">
-          <button onClick={() => scrollTo('shop')} className="hover:text-gray-600 text-center">Shop</button>
-          <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 text-center">Latest News</a>
-          <button onClick={() => scrollTo('merch')} className="hover:text-gray-600 text-center">Merch</button>
-          <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 text-center">Media Kit</a>
-          <button onClick={toggleCart} aria-label="Open cart" className="relative">
+          <button
+            onClick={() => scrollTo("shop")}
+            className="hover:text-gray-600 text-center"
+          >
+            Shop
+          </button>
+          <a
+            href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 text-center"
+          >
+            Latest News
+          </a>
+          <button
+            onClick={() => scrollTo("merch")}
+            className="hover:text-gray-600 text-center"
+          >
+            Merch
+          </button>
+          <a
+            href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 text-center"
+          >
+            Media Kit
+          </a>
+          <button
+            onClick={toggleCart}
+            aria-label="Open cart"
+            className="relative"
+          >
             <ShoppingCart className="w-5 h-5" />
             {itemCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">{itemCount}</span>
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {itemCount}
+              </span>
             )}
           </button>
         </nav>

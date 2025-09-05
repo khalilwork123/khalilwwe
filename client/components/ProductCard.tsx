@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Product } from '@shared/products';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import { Product } from "@shared/products";
+import { Button } from "@/components/ui/button";
 
 interface ProductCardProps {
   product: Product;
@@ -8,7 +8,11 @@ interface ProductCardProps {
   onViewDetails: (product: Product) => void;
 }
 
-export const ProductCard = ({ product, index, onViewDetails }: ProductCardProps) => {
+export const ProductCard = ({
+  product,
+  index,
+  onViewDetails,
+}: ProductCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -40,10 +44,7 @@ export const ProductCard = ({ product, index, onViewDetails }: ProductCardProps)
           ${product.price.toLocaleString()}.00
         </div>
 
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
             onClick={() => onViewDetails(product)}
             className="w-full bg-black hover:bg-white hover:text-black transition-all duration-300"

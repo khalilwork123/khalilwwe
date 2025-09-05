@@ -18,12 +18,18 @@ const LOGO =
   "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800";
 const BANNER =
   "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbd1552e34f2d44928b14ba09af97aa72?format=webp&width=1600";
-const DESIGN1 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fce264f89985544f7b62040385ee3ed62?format=webp&width=800";
-const DESIGN2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8f79e477e182446481c7b40d41f5cce7?format=webp&width=800";
-const DESIGN3 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F577e8a5898114753aa5613bbdf84727f?format=webp&width=800";
-const WHY1 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F076643af05d249eeb5fef9aa9be14291?format=webp&width=800";
-const WHY2 = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F025634f30d884a2bb84a271393075b3b?format=webp&width=800";
-const MATERIALS_MAIN = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc69d6387ff94425ba6160b527c6075fc?format=webp&width=1200";
+const DESIGN1 =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fce264f89985544f7b62040385ee3ed62?format=webp&width=800";
+const DESIGN2 =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8f79e477e182446481c7b40d41f5cce7?format=webp&width=800";
+const DESIGN3 =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F577e8a5898114753aa5613bbdf84727f?format=webp&width=800";
+const WHY1 =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F076643af05d249eeb5fef9aa9be14291?format=webp&width=800";
+const WHY2 =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F025634f30d884a2bb84a271393075b3b?format=webp&width=800";
+const MATERIALS_MAIN =
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc69d6387ff94425ba6160b527c6075fc?format=webp&width=1200";
 
 export default function Info() {
   const [lightbox, setLightbox] = useState<string | null>(null);

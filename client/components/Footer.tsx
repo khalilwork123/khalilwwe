@@ -104,7 +104,12 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-gray-300">
               <li>Phone: +1 929 6129 615</li>
               <li>Address: 719 2nd Ave, New York NY 10016</li>
-              <li>Email: <a href="mailto:burnitdownyt@gmail.com" className="underline">burnitdownyt@gmail.com</a></li>
+              <li>
+                Email:{" "}
+                <a href="mailto:burnitdownyt@gmail.com" className="underline">
+                  burnitdownyt@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
