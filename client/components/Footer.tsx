@@ -100,6 +100,19 @@ export const Footer = () => {
           </div>
         </div>
 
+        <div className="hidden lg:grid grid-cols-3 gap-8 mb-8">
+          <div></div>
+          <div></div>
+          <div>
+            <h3 className="font-bold mb-2">Contact Details</h3>
+            <ul className="space-y-1 text-sm text-gray-300">
+              <li>Phone: +1 929 6129 615</li>
+              <li>Address: 719 2nd Ave, New York NY 10016</li>
+              <li>Email: <a href="mailto:burnitdownyt@gmail.com" className="underline">burnitdownyt@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+
         <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
           <p>&copy; 2025 BURNITDOWNYT. All rights reserved.</p>
         </div>
