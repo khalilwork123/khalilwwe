@@ -23,7 +23,7 @@ export const HeroSection = () => {
           className="mr-0 md:mr-6"
         >
           <a
-            href="https://championshipbeltmaker.com"
+            href="https://www.wwe.com/wrestlemania42-pre-registration"
             target="_blank"
             rel="noopener noreferrer"
           >
