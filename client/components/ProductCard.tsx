@@ -47,7 +47,7 @@ export const ProductCard = ({ product, index, onViewDetails }: ProductCardProps)
             onClick={() => onViewDetails(product)}
             className="w-full bg-black hover:bg-white hover:text-black transition-all duration-300"
           >
-            Add to Cart
+            View Details
           </Button>
         </motion.div>
       </div>
