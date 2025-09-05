@@ -12,7 +12,7 @@ export default function Index() {
     <div className="min-h-screen">
       <InfoSection />
       <Header />
-      <div className="h-16 md:h-[76px]"></div>
+      <div className="h-24 md:h-[108px]"></div>
       <HeroSection />
       <ShopSection />
       <MerchSection />
