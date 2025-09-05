@@ -44,7 +44,7 @@ export const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white text-black py-4 px-4 md:px-6 border-b border-gray-200"
+      className="fixed top-10 left-0 right-0 z-40 bg-white text-black py-4 px-4 md:px-6 border-b border-gray-200"
     >
       <div className="container mx-auto flex items-center justify-between gap-4 md:gap-6 font-space">
         {/* Left - Logo */}
@@ -60,7 +60,7 @@ export const Header = () => {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"
             alt="BURNITDOWNYT"
-            className="h-10 w-auto object-contain"
+            className="h-9 md:h-10 w-auto object-contain shrink-0"
           />
         </a>
 
@@ -147,10 +147,10 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         <nav className="flex md:hidden items-center gap-4 ml-auto text-sm">
-          <button onClick={() => scrollTo('shop')} className="hover:text-gray-600">Shop</button>
-          <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">Latest News</a>
-          <button onClick={() => scrollTo('merch')} className="hover:text-gray-600">Merch</button>
-          <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600">Media Kit</a>
+          <button onClick={() => scrollTo('shop')} className="hover:text-gray-600 text-center">Shop</button>
+          <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 text-center">Latest News</a>
+          <button onClick={() => scrollTo('merch')} className="hover:text-gray-600 text-center">Merch</button>
+          <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 text-center">Media Kit</a>
           <button onClick={toggleCart} aria-label="Open cart" className="relative">
             <ShoppingCart className="w-5 h-5" />
             {itemCount > 0 && (
