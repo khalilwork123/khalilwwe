@@ -37,8 +37,9 @@ export default function Info() {
       {/* Hero */}
       <section className="relative bg-black text-white overflow-hidden">
         <img
-          src={SAMPLE}
+          src={BANNER}
           alt="Belts hero"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="container mx-auto px-6 py-24 relative z-10 text-center font-space">
