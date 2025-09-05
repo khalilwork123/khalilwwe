@@ -9,7 +9,7 @@ export const InfoSection = () => {
       className="bg-black text-white py-2 px-6 text-center"
     >
       <p className="text-sm font-medium">
-        30% off plus • Limited time
+        Use code BURN for 10% off • Limited time
       </p>
     </motion.div>
   );
