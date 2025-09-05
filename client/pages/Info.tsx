@@ -99,11 +99,12 @@ export default function Info() {
             </ul>
             <div
               className="mt-6 rounded-lg overflow-hidden cursor-pointer"
-              onClick={() => open(SAMPLE)}
+              onClick={() => open(CUSTOMIZE_MAIN)}
             >
               <img
-                src={SAMPLE}
+                src={CUSTOMIZE_MAIN}
                 alt="Detail"
+                loading="lazy"
                 className="w-full h-48 object-cover"
               />
             </div>
@@ -135,11 +136,12 @@ export default function Info() {
               Investment range: $1,000 – $4,000 (depends on complexity).
             </p>
             <div className="mt-6 grid grid-cols-3 gap-3">
-              {[SAMPLE, SAMPLE, SAMPLE].map((src, i) => (
+              {[DESIGN1, DESIGN2, DESIGN3].map((src, i) => (
                 <img
                   key={i}
                   src={src}
                   alt={`Process ${i + 1}`}
+                  loading="lazy"
                   onClick={() => open(src)}
                   className="h-28 w-full object-cover rounded cursor-pointer"
                 />
@@ -235,11 +237,12 @@ export default function Info() {
               championship ships ready to display, wear and celebrate.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3">
-              {[SAMPLE, SAMPLE].map((src, i) => (
+              {[WHY1, WHY2].map((src, i) => (
                 <img
                   key={i}
                   src={src}
                   alt={`Gallery ${i + 1}`}
+                  loading="lazy"
                   onClick={() => open(src)}
                   className="h-28 w-full object-cover rounded cursor-pointer"
                 />
@@ -255,7 +258,7 @@ export default function Info() {
           <h2 className="text-3xl font-bold mb-8 text-center font-space">
             What Buyers Say
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
             {[
               {
                 name: "Mohammad – Dubai",
@@ -287,7 +290,7 @@ export default function Info() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow"
+                className="bg-white rounded-xl p-6 shadow h-full flex flex-col"
               >
                 <div className="flex items-center gap-2 text-black mb-3">
                   <Quote className="w-4 h-4" />
