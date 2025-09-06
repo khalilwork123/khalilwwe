@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CheckoutData, CartItem, Voucher } from "@shared/products";
+import { useNavigate } from "react-router-dom";
 
 interface OrderData extends CheckoutData {
   items: CartItem[];
@@ -12,6 +13,7 @@ interface OrderData extends CheckoutData {
 
 export default function Bill() {
   const [orderData, setOrderData] = useState<OrderData | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedOrder = localStorage.getItem("wwe-order");
@@ -38,6 +40,13 @@ export default function Bill() {
       className="min-h-screen bg-white p-8"
       style={{ fontFamily: "Arial, sans-serif" }}
     >
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed top-4 right-4 z-50 bg-black text-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg hover:bg-gray-800"
+        aria-label="Close bill"
+      >
+        ×
+      </button>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 border-b-2 border-black pb-6">
