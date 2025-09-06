@@ -18,9 +18,9 @@ export const BrandHighlights = () => {
       href: "https://www.instagram.com/burnitdown.store?igsh=MWc0aDhpZTd0b3dudA%3D%3D&utm_source=qr",
     },
     {
-      name: "Facebook",
+      name: "Instagram",
       img: "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc827988ce75f45f29224bc0cfcf9cb4c?format=webp&width=800",
-      href: "https://www.facebook.com/share/g/1FNLn37Fvm/?mibextid=wwXIfr",
+      href: "https://www.instagram.com/burnitdownyt",
     },
   ];
 
