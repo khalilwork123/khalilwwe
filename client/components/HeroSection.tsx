@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const HeroSection = () => {
+  const isMobile = useIsMobile();
+  const desktopBg = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbb05f806738f41afb6c3a0b51a1ffac0?format=webp&width=1200";
+  const mobileBg = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F76fe5588e4824cc0bbe96afacf1112e6?format=webp&width=800";
   return (
     <section
       className="bg-black text-white px-6 relative overflow-hidden h-[80vh]"
       style={{
-        backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fbb05f806738f41afb6c3a0b51a1ffac0?format=webp&width=1200')`,
+        backgroundImage: `url('${isMobile ? mobileBg : desktopBg}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
