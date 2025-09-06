@@ -45,7 +45,6 @@ export default function Bill() {
             BURNITDOWNYT
           </h1>
           <h2 className="text-2xl font-bold">WWE CHAMPIONSHIP BELTS</h2>
-          <p className="text-lg mt-2">Official WWE Merchandise Store</p>
         </div>
 
         {/* Bill Information */}
@@ -178,7 +177,7 @@ export default function Bill() {
             </p>
             <ol className="list-decimal list-inside space-y-1 ml-4">
               <li>Take a screenshot of this entire bill</li>
-              <li>Send the screenshot to our payment team</li>
+              <li>Send the screenshot to WhatsApp: +1 (929) 612-9615 or Instagram DM @burnitdownyt</li>
               <li>
                 Include your order number: <strong>{orderNumber}</strong>
               </li>
