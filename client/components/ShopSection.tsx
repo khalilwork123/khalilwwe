@@ -55,14 +55,15 @@ export const ShopSection = () => {
               {Array.from({ length: totalPages }).map((_, index) => (
                 <motion.button
                   key={index}
-                  whileHover={{ scale: 1.3 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setCurrentPage(index)}
                   className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${
                     index === currentPage
-                      ? 'bg-white border-white scale-125'
-                      : 'bg-gray-400 border-gray-400 hover:border-white'
+                      ? 'bg-black border-black scale-110'
+                      : 'bg-transparent border-black'
                   }`}
+                  aria-label={`Go to page ${index + 1}`}
                 />
               ))}
             </div>
