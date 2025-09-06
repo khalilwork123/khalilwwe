@@ -71,13 +71,20 @@ export const Header = () => {
               navigate("/");
             }}
           >
-            <img
-              src={isMobile ?
-                "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1a917ad4383c40e18c0e0627e26b153b?format=webp&width=1600"
-                : "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"}
-              alt="BURNITDOWNYT"
-              className="h-3.5 md:h-10 w-auto object-contain shrink-0"
-            />
+            {isMobile ? (
+              <span
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+                className="text-[13px] font-medium tracking-wide leading-none select-none"
+              >
+                BURNITDOWNYT
+              </span>
+            ) : (
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"
+                alt="BURNITDOWNYT"
+                className="h-10 w-auto object-contain shrink-0"
+              />
+            )}
           </a>
         </div>
 
