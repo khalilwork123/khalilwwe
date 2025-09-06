@@ -177,6 +177,13 @@ export default function Cart() {
                       <Input
                         value={voucherCode}
                         onChange={(e) => setVoucherCode(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleApplyVoucher();
+                          }
+                        }}
                         placeholder="Enter voucher code"
                         className="flex-1"
                       />
