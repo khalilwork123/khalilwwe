@@ -63,9 +63,7 @@ export default function Checkout() {
       localStorage.setItem('wwe-order', JSON.stringify(orderData));
       clearCart();
       
-      // Open bill in new tab
-      window.open('/bill', '_blank');
-      navigate('/');
+      navigate('/bill');
     }
   };
 
