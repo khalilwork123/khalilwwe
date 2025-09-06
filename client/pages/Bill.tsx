@@ -41,7 +41,7 @@ export default function Bill() {
       style={{ fontFamily: "Arial, sans-serif" }}
     >
       <button
-        onClick={() => navigate('/')}
+        onClick={() => navigate("/")}
         className="fixed top-4 right-4 z-50 bg-white text-black border border-black rounded-full w-9 h-9 flex items-center justify-center shadow hover:bg-gray-50"
         aria-label="Close bill"
       >
@@ -186,7 +186,10 @@ export default function Bill() {
             </p>
             <ol className="list-decimal list-inside space-y-1 ml-4">
               <li>Take a screenshot of this entire bill</li>
-              <li>Send the screenshot to WhatsApp: +1 (929) 612-9615 or Instagram DM @burnitdownyt</li>
+              <li>
+                Send the screenshot to WhatsApp: +1 (929) 612-9615 or Instagram
+                DM @burnitdownyt
+              </li>
               <li>
                 Include your order number: <strong>{orderNumber}</strong>
               </li>

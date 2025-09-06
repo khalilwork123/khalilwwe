@@ -178,7 +178,7 @@ export default function Cart() {
                         value={voucherCode}
                         onChange={(e) => setVoucherCode(e.target.value)}
                         onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
+                          if (e.key === "Enter") {
                             e.preventDefault();
                             e.stopPropagation();
                             handleApplyVoucher();

@@ -73,7 +73,7 @@ export const Header = () => {
           >
             {isMobile ? (
               <span
-                style={{ fontFamily: 'Poppins, sans-serif' }}
+                style={{ fontFamily: "Poppins, sans-serif" }}
                 className="text-[13px] font-medium tracking-wide leading-none select-none"
               >
                 BURNITDOWNYT
@@ -91,13 +91,52 @@ export const Header = () => {
         {/* Center - Desktop navigation */}
         <div className="hidden md:flex flex-1 justify-center">
           <nav className="flex items-center gap-6">
-            <Link to="/" className="hover:text-gray-600 transition-colors text-sm">Home</Link>
-            <button onClick={() => scrollTo("shop")} className="hover:text-gray-600 transition-colors text-sm">Shop</button>
-            <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Latest News</a>
-            <button onClick={() => scrollTo("merch")} className="hover:text-gray-600 transition-colors text-sm">Merch</button>
-            <Link to="/info" className="hover:text-gray-600 transition-colors text-sm">Info</Link>
-            <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Media Kit</a>
-            <Link to="/contact" className="hover:text-gray-600 transition-colors text-sm">Contact Us</Link>
+            <Link
+              to="/"
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Home
+            </Link>
+            <button
+              onClick={() => scrollTo("shop")}
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Shop
+            </button>
+            <a
+              href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Latest News
+            </a>
+            <button
+              onClick={() => scrollTo("merch")}
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Merch
+            </button>
+            <Link
+              to="/info"
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Info
+            </Link>
+            <a
+              href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Media Kit
+            </a>
+            <Link
+              to="/contact"
+              className="hover:text-gray-600 transition-colors text-sm"
+            >
+              Contact Us
+            </Link>
           </nav>
         </div>
 
@@ -136,11 +175,19 @@ export const Header = () => {
         {/* Mobile drawer */}
         {mobileOpen && (
           <div className="fixed inset-0 z-50 md:hidden">
-            <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
+            <div
+              className="absolute inset-0 bg-black/50"
+              onClick={() => setMobileOpen(false)}
+            />
             <div className="absolute top-0 left-0 h-full w-72 bg-white shadow-xl p-6 overflow-y-auto">
               <div className="flex items-center justify-between mb-6">
                 <span className="font-bold">Menu</span>
-                <button onClick={() => setMobileOpen(false)} aria-label="Close menu">✕</button>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
               </div>
               <div className="mb-4 flex items-center gap-2 border rounded-full px-3 py-2">
                 <Search className="w-4 h-4" />
@@ -148,10 +195,10 @@ export const Header = () => {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
+                    if (e.key === "Enter") {
                       e.preventDefault();
                       setMobileOpen(false);
-                      setTimeout(() => scrollTo('shop'), 0);
+                      setTimeout(() => scrollTo("shop"), 0);
                     }
                   }}
                   placeholder="Search products"
@@ -159,13 +206,75 @@ export const Header = () => {
                 />
               </div>
               <ul className="space-y-3">
-                <li><Link to="/" onClick={() => setMobileOpen(false)} className="block">Home</Link></li>
-                <li><button onClick={() => { setMobileOpen(false); scrollTo("shop"); }} className="block w-full text-left">Shop</button></li>
-                <li><a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="block">Latest News</a></li>
-                <li><button onClick={() => { setMobileOpen(false); scrollTo("merch"); }} className="block w-full text-left">Merch</button></li>
-                <li><Link to="/info" onClick={() => setMobileOpen(false)} className="block">Info</Link></li>
-                <li><a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="block">Media Kit</a></li>
-                <li><Link to="/contact" onClick={() => setMobileOpen(false)} className="block">Contact Us</Link></li>
+                <li>
+                  <Link
+                    to="/"
+                    onClick={() => setMobileOpen(false)}
+                    className="block"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setMobileOpen(false);
+                      scrollTo("shop");
+                    }}
+                    className="block w-full text-left"
+                  >
+                    Shop
+                  </button>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    Latest News
+                  </a>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setMobileOpen(false);
+                      scrollTo("merch");
+                    }}
+                    className="block w-full text-left"
+                  >
+                    Merch
+                  </button>
+                </li>
+                <li>
+                  <Link
+                    to="/info"
+                    onClick={() => setMobileOpen(false)}
+                    className="block"
+                  >
+                    Info
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    Media Kit
+                  </a>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    onClick={() => setMobileOpen(false)}
+                    className="block"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

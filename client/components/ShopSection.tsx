@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { PRODUCTS, Product } from '@shared/products';
-import { ProductCard } from './ProductCard';
-import { ProductModal } from './ProductModal';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { PRODUCTS, Product } from "@shared/products";
+import { ProductCard } from "./ProductCard";
+import { ProductModal } from "./ProductModal";
 
-import { useEffect } from 'react';
-import { useSearch } from '@/contexts/SearchContext';
+import { useEffect } from "react";
+import { useSearch } from "@/contexts/SearchContext";
 
 export const ShopSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -14,7 +14,9 @@ export const ShopSection = () => {
   const { query } = useSearch();
 
   const itemsPerPage = 12; // Exactly 4 rows × 3 columns = 12 items
-  const filtered = PRODUCTS.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+  const filtered = PRODUCTS.filter((p) =>
+    p.name.toLowerCase().includes(query.toLowerCase()),
+  );
   const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
 
   useEffect(() => {
@@ -60,8 +62,8 @@ export const ShopSection = () => {
                   onClick={() => setCurrentPage(index)}
                   className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${
                     index === currentPage
-                      ? 'bg-black border-black scale-110'
-                      : 'bg-transparent border-black'
+                      ? "bg-black border-black scale-110"
+                      : "bg-transparent border-black"
                   }`}
                   aria-label={`Go to page ${index + 1}`}
                 />
@@ -71,7 +73,7 @@ export const ShopSection = () => {
 
           {/* Products Grid - 4 columns on desktop, responsive on smaller screens */}
           <motion.div
-            key={currentPage + (query || '')}
+            key={currentPage + (query || "")}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
@@ -79,7 +81,9 @@ export const ShopSection = () => {
             className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6"
           >
             {getCurrentProducts().length === 0 ? (
-              <div className="col-span-full text-center text-gray-600">No products found.</div>
+              <div className="col-span-full text-center text-gray-600">
+                No products found.
+              </div>
             ) : (
               getCurrentProducts().map((product, index) => (
                 <ProductCard
@@ -98,7 +102,9 @@ export const ShopSection = () => {
                 key={`bottom-${index}`}
                 onClick={() => setCurrentPage(index)}
                 className={`w-4 h-4 rounded-full border-2 ${
-                  index === currentPage ? 'bg-black border-black' : 'bg-transparent border-black'
+                  index === currentPage
+                    ? "bg-black border-black"
+                    : "bg-transparent border-black"
                 }`}
                 aria-label={`Go to page ${index + 1}`}
               />
