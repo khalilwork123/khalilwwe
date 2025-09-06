@@ -45,21 +45,21 @@ export const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-10 left-0 right-0 z-40 bg-white text-black py-4 px-4 md:px-6 border-b border-gray-200"
+      className="fixed top-10 left-0 right-0 z-40 bg-white text-black py-4 px-2 md:px-6 border-b border-gray-200"
     >
       <div className="container mx-auto flex items-center gap-4 md:gap-6 font-space">
         {/* Left */}
         <div className="flex items-center gap-3">
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="md:hidden -ml-3"
             aria-label="Open menu"
             onClick={() => setMobileOpen(true)}
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fec1073ac2e8842d98b753683a8fc29a5?format=webp&width=64"
               alt="Menu"
-              className="h-6 w-6"
+              className="h-7 w-7"
             />
           </button>
           <a
@@ -68,7 +68,7 @@ export const Header = () => {
             className="flex items-center"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             <img
@@ -76,7 +76,7 @@ export const Header = () => {
                 "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1a917ad4383c40e18c0e0627e26b153b?format=webp&width=800"
                 : "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"}
               alt="BURNITDOWNYT"
-              className="h-9 md:h-10 w-auto object-contain shrink-0"
+              className="h-7 md:h-10 w-auto object-contain shrink-0"
             />
           </a>
         </div>
@@ -140,6 +140,13 @@ export const Header = () => {
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      setMobileOpen(false);
+                      setTimeout(() => scrollTo('shop'), 0);
+                    }
+                  }}
                   placeholder="Search products"
                   className="outline-none text-sm w-full"
                 />
