@@ -91,6 +91,19 @@ export const ShopSection = () => {
               ))
             )}
           </motion.div>
+          {/* Bottom pagination dots for mobile */}
+          <div className="flex justify-center space-x-3 mt-8 md:hidden">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={`bottom-${index}`}
+                onClick={() => setCurrentPage(index)}
+                className={`w-4 h-4 rounded-full border-2 ${
+                  index === currentPage ? 'bg-black border-black' : 'bg-transparent border-black'
+                }`}
+                aria-label={`Go to page ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
