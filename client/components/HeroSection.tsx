@@ -8,12 +8,12 @@ export const HeroSection = () => {
   const mobileBg = "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F66c1babcce114eb896b5f4a03e74236e?format=webp&width=800";
   return (
     <section
-      className="bg-black text-white px-6 relative overflow-hidden h-[80vh]"
+      className={`bg-black text-white px-6 relative overflow-hidden ${isMobile ? 'h-[65vh]' : 'h-[80vh]'}`}
       style={{
         backgroundImage: `url('${isMobile ? mobileBg : desktopBg}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: isMobile ? 'contain' : 'cover',
+        backgroundPosition: isMobile ? 'center 45%' : 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Dark overlay for better text readability */}
