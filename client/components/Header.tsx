@@ -5,7 +5,6 @@ import { useSearch } from "@/contexts/SearchContext";
 import { motion } from "framer-motion";
 import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Search, ShoppingCart } from "lucide-react";
 
 export const Header = () => {
   const { getItemCount, toggleCart } = useCart();
