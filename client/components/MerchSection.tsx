@@ -40,11 +40,6 @@ export const MerchSection = () => {
           <p className="text-gray-600">
             Step into the spotlight with custom WWE merch!
           </p>
-          <div className="flex justify-center space-x-2 mt-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
-            <div className="w-2 h-2 bg-black rounded-full"></div>
-            <div className="w-2 h-2 bg-black rounded-full"></div>
-          </div>
         </motion.div>
 
         <motion.div
