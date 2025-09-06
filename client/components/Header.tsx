@@ -14,6 +14,7 @@ export const Header = () => {
   const isMobile = useIsMobile();
 
   const [visible, setVisible] = React.useState(true);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const lastScrollY = React.useRef(0);
   React.useEffect(() => {
     const onScroll = () => {
@@ -46,148 +47,115 @@ export const Header = () => {
       transition={{ duration: 0.3 }}
       className="fixed top-10 left-0 right-0 z-40 bg-white text-black py-4 px-4 md:px-6 border-b border-gray-200"
     >
-      <div className="container mx-auto flex items-center justify-between gap-4 md:gap-6 font-space">
-        {/* Left - Logo */}
-        <a
-          href="/"
-          aria-label="Home"
-          className="flex items-center"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/";
-          }}
-        >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"
-            alt="BURNITDOWNYT"
-            className="h-9 md:h-10 w-auto object-contain shrink-0"
-          />
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 ml-auto">
-          <Link
-            to="/"
-            className="hover:text-gray-600 transition-colors text-sm"
-          >
-            Home
-          </Link>
+      <div className="container mx-auto flex items-center gap-4 md:gap-6 font-space">
+        {/* Left */}
+        <div className="flex items-center gap-3">
+          {/* Mobile menu button */}
           <button
-            onClick={() => scrollTo("shop")}
-            className="hover:text-gray-600 transition-colors text-sm"
+            className="md:hidden"
+            aria-label="Open menu"
+            onClick={() => setMobileOpen(true)}
           >
-            Shop
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fec1073ac2e8842d98b753683a8fc29a5?format=webp&width=64"
+              alt="Menu"
+              className="h-6 w-6"
+            />
           </button>
           <a
-            href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-600 transition-colors text-sm"
+            href="/"
+            aria-label="Home"
+            className="flex items-center"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "/";
+            }}
           >
-            Latest News
+            <img
+              src={isMobile ?
+                "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1a917ad4383c40e18c0e0627e26b153b?format=webp&width=800"
+                : "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"}
+              alt="BURNITDOWNYT"
+              className="h-9 md:h-10 w-auto object-contain shrink-0"
+            />
           </a>
-          <button
-            onClick={() => scrollTo("merch")}
-            className="hover:text-gray-600 transition-colors text-sm"
-          >
-            Merch
-          </button>
-          <Link
-            to="/info"
-            className="hover:text-gray-600 transition-colors text-sm"
-          >
-            Info
-          </Link>
-          <a
-            href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-600 transition-colors text-sm"
-          >
-            Media Kit
-          </a>
-          <Link
-            to="/contact"
-            className="hover:text-gray-600 transition-colors text-sm"
-          >
-            Contact Us
-          </Link>
+        </div>
 
-          <div className="flex items-center gap-3 ml-2">
-            <div className="flex items-center gap-2 border rounded-full px-3 py-1">
-              <Search className="w-4 h-4" />
-              <input
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  scrollTo("shop");
-                }}
-                placeholder="Search products"
-                className="outline-none text-sm w-32 md:w-48"
-              />
-            </div>
-            <button
-              onClick={toggleCart}
-              className="relative cursor-pointer hover:text-gray-600 transition-colors"
-              aria-label="Open cart"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              {itemCount > 0 && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-                >
-                  {itemCount}
-                </motion.span>
-              )}
-            </button>
+        {/* Center - Desktop navigation */}
+        <div className="hidden md:flex flex-1 justify-center">
+          <nav className="flex items-center gap-6">
+            <Link to="/" className="hover:text-gray-600 transition-colors text-sm">Home</Link>
+            <button onClick={() => scrollTo("shop")} className="hover:text-gray-600 transition-colors text-sm">Shop</button>
+            <a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Latest News</a>
+            <button onClick={() => scrollTo("merch")} className="hover:text-gray-600 transition-colors text-sm">Merch</button>
+            <Link to="/info" className="hover:text-gray-600 transition-colors text-sm">Info</Link>
+            <a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors text-sm">Media Kit</a>
+            <Link to="/contact" className="hover:text-gray-600 transition-colors text-sm">Contact Us</Link>
+          </nav>
+        </div>
+
+        {/* Right - search + cart (desktop) / cart only (mobile) */}
+        <div className="ml-auto flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 border rounded-full px-3 py-1">
+            <Search className="w-4 h-4" />
+            <input
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                scrollTo("shop");
+              }}
+              placeholder="Search products"
+              className="outline-none text-sm w-32 md:w-48"
+            />
           </div>
-        </nav>
-
-        {/* Mobile Navigation */}
-        <nav className="flex md:hidden items-center gap-4 ml-auto text-sm">
-          <button
-            onClick={() => scrollTo("shop")}
-            className="hover:text-gray-600 text-center"
-          >
-            Shop
-          </button>
-          <a
-            href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-600 text-center"
-          >
-            Latest News
-          </a>
-          <button
-            onClick={() => scrollTo("merch")}
-            className="hover:text-gray-600 text-center"
-          >
-            Merch
-          </button>
-          <a
-            href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-600 text-center"
-          >
-            Media Kit
-          </a>
           <button
             onClick={toggleCart}
+            className="relative cursor-pointer hover:text-gray-600 transition-colors"
             aria-label="Open cart"
-            className="relative"
           >
             <ShoppingCart className="w-5 h-5" />
             {itemCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+              >
                 {itemCount}
-              </span>
+              </motion.span>
             )}
           </button>
-        </nav>
+        </div>
+
+        {/* Mobile drawer */}
+        {mobileOpen && (
+          <div className="fixed inset-0 z-50 md:hidden">
+            <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
+            <div className="absolute top-0 left-0 h-full w-72 bg-white shadow-xl p-6 overflow-y-auto">
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-bold">Menu</span>
+                <button onClick={() => setMobileOpen(false)} aria-label="Close menu">✕</button>
+              </div>
+              <div className="mb-4 flex items-center gap-2 border rounded-full px-3 py-2">
+                <Search className="w-4 h-4" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search products"
+                  className="outline-none text-sm w-full"
+                />
+              </div>
+              <ul className="space-y-3">
+                <li><Link to="/" onClick={() => setMobileOpen(false)} className="block">Home</Link></li>
+                <li><button onClick={() => { setMobileOpen(false); scrollTo("shop"); }} className="block w-full text-left">Shop</button></li>
+                <li><a href="https://www.instagram.com/burnitdownyt?igsh=MTExOGNwOHJhZWYyYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="block">Latest News</a></li>
+                <li><button onClick={() => { setMobileOpen(false); scrollTo("merch"); }} className="block w-full text-left">Merch</button></li>
+                <li><Link to="/info" onClick={() => setMobileOpen(false)} className="block">Info</Link></li>
+                <li><a href="https://drive.google.com/file/d/1NYbtlrr0m_L64UMf7SP6k8dqafEjyvhe/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="block">Media Kit</a></li>
+                <li><Link to="/contact" onClick={() => setMobileOpen(false)} className="block">Contact Us</Link></li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </motion.header>
   );
