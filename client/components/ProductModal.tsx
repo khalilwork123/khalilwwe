@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { Product } from "@shared/products";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import ImageLightbox from "@/components/ImageLightbox";
@@ -23,6 +23,10 @@ export const ProductModal = ({
   const [customRequest, setCustomRequest] = useState("");
   const [lightbox, setLightbox] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setCustomRequest("");
+  }, [product, isOpen]);
 
   const handleAddToCart = () => {
     if (product) {
@@ -97,7 +101,7 @@ export const ProductModal = ({
                       />
                     </div>
                     <div
-                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden hidden md:block cursor-pointer"
+                      className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer"
                       onClick={() =>
                         setLightbox(
                           (product.images && product.images[1]) ||
