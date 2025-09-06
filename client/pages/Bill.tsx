@@ -41,8 +41,8 @@ export default function Bill() {
       style={{ fontFamily: "Arial, sans-serif" }}
     >
       <button
-        onClick={() => navigate(-1)}
-        className="fixed top-4 right-4 z-50 bg-black text-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg hover:bg-gray-800"
+        onClick={() => navigate('/')}
+        className="fixed top-4 right-4 z-50 bg-white text-black border border-black rounded-full w-9 h-9 flex items-center justify-center shadow hover:bg-gray-50"
         aria-label="Close bill"
       >
         ×
