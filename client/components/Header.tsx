@@ -49,7 +49,7 @@ export const Header = () => {
     >
       <div className="container mx-auto flex items-center gap-4 md:gap-6 font-space">
         {/* Left */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           {/* Mobile menu button */}
           <button
             className="md:hidden -ml-3"
@@ -76,7 +76,7 @@ export const Header = () => {
                 "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1a917ad4383c40e18c0e0627e26b153b?format=webp&width=800"
                 : "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F82c0af6178024f2eaa8410500e19f4e2?format=webp&width=800"}
               alt="BURNITDOWNYT"
-              className="h-7 md:h-10 w-auto object-contain shrink-0"
+              className="h-4 md:h-10 w-auto object-contain shrink-0"
             />
           </a>
         </div>
