@@ -11,7 +11,7 @@ export const HeroSection = () => {
       className={`bg-black text-white px-6 relative overflow-hidden ${isMobile ? 'h-[65vh]' : 'h-[80vh]'}`}
       style={{
         backgroundImage: `url('${isMobile ? mobileBg : desktopBg}')`,
-        backgroundSize: isMobile ? 'contain' : 'cover',
+        backgroundSize: isMobile ? '125% 90%' : 'cover',
         backgroundPosition: isMobile ? 'center 45%' : 'center',
         backgroundRepeat: 'no-repeat',
       }}
