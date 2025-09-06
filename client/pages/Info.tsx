@@ -25,11 +25,11 @@ const DESIGN2 =
 const DESIGN3 =
   "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F577e8a5898114753aa5613bbdf84727f?format=webp&width=800";
 const WHY1 =
-  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F076643af05d249eeb5fef9aa9be14291?format=webp&width=800";
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F0d7bfc25e959456d88af4b3c50b22949?format=webp&width=800";
 const WHY2 =
   "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F025634f30d884a2bb84a271393075b3b?format=webp&width=800";
 const MATERIALS_MAIN =
-  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc69d6387ff94425ba6160b527c6075fc?format=webp&width=1200";
+  "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa5f35d800c474d02a133ceddf95710b9?format=webp&width=800";
 
 export default function Info() {
   const [lightbox, setLightbox] = useState<string | null>(null);
