@@ -36,11 +36,11 @@ export const ProductCard = ({
         />
       </div>
 
-      <div className="p-4">
+      <div className="p-3 md:p-4">
         <h3 className="font-semibold text-sm mb-2 line-clamp-2 min-h-[2.5rem]">
           {product.name}
         </h3>
-        <div className="text-lg font-bold text-black mb-3">
+        <div className="text-base md:text-lg font-bold text-black mb-2 md:mb-3">
           ${product.price.toLocaleString()}.00
         </div>
 
