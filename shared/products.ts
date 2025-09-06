@@ -370,7 +370,7 @@ export const PRODUCTS: Product[] = [
     details: [
       "8mm plates for authentic TV feel",
       "Classic TNA logo centerpiece",
-      "Globe‑etched side plates with gold detailing",
+      "Globe���etched side plates with gold detailing",
     ],
   },
   {
@@ -487,10 +487,10 @@ export const PRODUCTS: Product[] = [
     name: "WWE Brahma Bull Championship – The Rock Exclusive Edition",
     price: 1249,
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd5ae1b3c707243e39826fcfe01cd4058?format=webp&width=800",
-    images: [
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd5ae1b3c707243e39826fcfe01cd4058?format=webp&width=800",
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8458562dab804f4dbf8ba71a9e833c77?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8458562dab804f4dbf8ba71a9e833c77?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd5ae1b3c707243e39826fcfe01cd4058?format=webp&width=800",
     ],
     description:
       "Iconic Brahma Bull centerpiece with red gemstone eyes and custom side plates.",
