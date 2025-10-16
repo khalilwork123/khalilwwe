@@ -698,6 +698,373 @@ export const PRODUCTS: Product[] = [
       "Red stitching to enhance the theme",
     ],
   },
+  {
+    id: "37",
+    name: "Million Dollar Championship",
+    price: 1299,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff33f2dedd5354012929918db472ce90a?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff33f2dedd5354012929918db472ce90a?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F87003a68e2c04e2baace2cd3c43d9866?format=webp&width=800",
+    ],
+    description:
+      "24k gold-plated plates with sparkling crystals and genuine leather strap. A symbol of luxury, power, and prestige that made the Million Dollar Man unforgettable.",
+    details: [
+      "6mm plates for classic heavyweight feel",
+      "Intricate dollar sign engravings with diamond accents",
+      "Premium gold-tone finish and raised texture",
+    ],
+  },
+  {
+    id: "38",
+    name: "Triple AAA Mega Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2ef65ed67c6048ca9e205f95d1e80bfa?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2ef65ed67c6048ca9e205f95d1e80bfa?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F6d4bcc3f41904c95a699f7b4511b9af2?format=webp&width=800",
+    ],
+    description:
+      "Crafted with precision and passion, this belt represents the spirit of lucha libre excellence with an intricate design inspired by Mexican wrestling heritage.",
+    details: [
+      "Dual-layered 6mm plates",
+      "Authentic AAA logo engraving",
+      "Hand-stitched genuine leather strap",
+      "Includes display case",
+    ],
+  },
+  {
+    id: "39",
+    name: "Lucha Underground Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F20c330a56d7240b594a6ac3357f3b4ea?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F20c330a56d7240b594a6ac3357f3b4ea?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fb9067473b5694f47befaed0f5c0f01e4?format=webp&width=800",
+    ],
+    description:
+      "Bold, fierce, and full of attitude — this championship embodies the underground energy of the ring with detailed Aztec motifs and antique gold plating.",
+    details: [
+      "Antique 24k gold finish",
+      "Aztec mask and temple engravings",
+      "6mm dual-layer plates",
+    ],
+  },
+  {
+    id: "40",
+    name: "UFC Heavyweight Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e368fb251304827a97b7f2adf9eb608?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e368fb251304827a97b7f2adf9eb608?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F230deb8a21444fd1b7c765ee2b700003?format=webp&width=800",
+    ],
+    description:
+      "Precision-designed with a mix of gold and black plating. A tribute to the world's top fighters who define strength and discipline.",
+    details: [
+      "Octagon-inspired central plate",
+      "Dual-layer 6mm structure",
+      "Genuine leather strap with heavy-duty snaps",
+      "Includes custom name engraving",
+    ],
+  },
+  {
+    id: "41",
+    name: "Divas Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F53dcbf490ff240fd939f27c43e7ef4a0?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F53dcbf490ff240fd939f27c43e7ef4a0?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F52f46213b19b4ccba423e7e158ee993f?format=webp&width=800",
+    ],
+    description:
+      "A fan-favorite masterpiece with a stunning butterfly centerpiece and brilliant gemstones representing elegance and dominance.",
+    details: [
+      "Pink crystal-studded butterfly centerpiece",
+      "5mm plates for lightweight feel",
+      "Genuine leather strap",
+      "Includes custom nameplate engraving",
+    ],
+  },
+  {
+    id: "42",
+    name: "Speed Championship",
+    price: 899,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F16dd99014547488d81efa9ed349869d4?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F16dd99014547488d81efa9ed349869d4?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F3fad9bcfa4094711832f198d2a82095a?format=webp&width=800",
+    ],
+    description:
+      "Modern and sleek, built for those who rise above limits. The Speed Championship captures energy and agility in every detail.",
+    details: [
+      "Chrome silver finish with racing stripes",
+      "Lightweight 5mm plates",
+      "Laser-cut precision engravings",
+      "Worldwide shipping within 2 weeks",
+    ],
+  },
+  {
+    id: "43",
+    name: "Evolve Championship",
+    price: 899,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F544cdefbe6d8494b9b8b0928e33a669a?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F544cdefbe6d8494b9b8b0928e33a669a?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa5d382e4fa314b7684cca4e8d07d584f?format=webp&width=800",
+    ],
+    description:
+      "Symbolizing evolution and excellence, this belt stands out with its refined silver plating and sharp geometric design.",
+    details: [
+      "5mm dual-layer plates",
+      "Reflective silver shine",
+      "High-grade leather strap",
+      "Includes engraved nameplate",
+    ],
+  },
+  {
+    id: "44",
+    name: "Rated R Spinner Championship",
+    price: 1199,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd76669cbabf040d88f624416add7fdf7?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd76669cbabf040d88f624416add7fdf7?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff56e1fb047284648bbbe312e0079e877?format=webp&width=800",
+    ],
+    description:
+      "An iconic piece featuring a spinning center plate and red Rated R logo, representing rebellion and attitude.",
+    details: [
+      "Spinning central plate mechanism",
+      "Gloss red Rated R logo",
+      "24k gold and silver plating",
+    ],
+  },
+  {
+    id: "45",
+    name: "WWE Cruiserweight Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc8625f739a874aaf867fb16c1ab50af6?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc8625f739a874aaf867fb16c1ab50af6?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2d2709c994ea439b80ae7855da935bd4?format=webp&width=800",
+    ],
+    description:
+      "Designed for agility and prestige, this belt features purple highlights and the signature WWE logo in silver finish.",
+    details: [
+      "5mm plates for lightweight comfort",
+      "Silver finish with purple enamel details",
+      "Includes engraved nameplate",
+    ],
+  },
+  {
+    id: "46",
+    name: "Classic 2014 WWE Tag Team Title",
+    price: 1299,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fb64cd18363904efbb84e32d71963ba2c?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fb64cd18363904efbb84e32d71963ba2c?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fe44681f54dfb457198825268111a1a94?format=webp&width=800",
+    ],
+    description:
+      "Revisit tag team glory with these iconic copper-plated titles, crafted with legendary precision and bold dual gladiator emblems.",
+    details: [
+      "Copper-finished 6mm plates",
+      "Dual gladiator engravings",
+      "Genuine black leather strap",
+    ],
+  },
+  {
+    id: "47",
+    name: "24/7 Championship",
+    price: 699,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa9902c63fff345bea73fa98595d0d612?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa9902c63fff345bea73fa98595d0d612?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fee6abc9ff8064eb498a0c27bc75665bf?format=webp&width=800",
+    ],
+    description:
+      "Always on the line, this green leather beauty brings fun and chaos together with an instantly recognizable gold-plated design.",
+    details: [
+      "Green genuine leather strap",
+      "Polished gold-plated centerpiece",
+      "5mm plates with lightweight construction",
+    ],
+  },
+  {
+    id: "48",
+    name: "Crown Jewel Championship",
+    price: 1399,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F9c3f39db2c78416a9beb15e4a759a2cc?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F9c3f39db2c78416a9beb15e4a759a2cc?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F03bec16028c24d5db7762fc058a39b38?format=webp&width=800",
+    ],
+    description:
+      "A royal masterpiece celebrating excellence and grandeur, inspired by the Crown Jewel event with emerald gemstone detailing.",
+    details: [
+      "24k gold-plated centerpiece",
+      "Embedded emerald stones",
+      "Intricate crown and sword engravings",
+    ],
+  },
+  {
+    id: "49",
+    name: "Classic NXT Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F607a01c541834221bd1ad08212aaca5c?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F607a01c541834221bd1ad08212aaca5c?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fe34ce97d1d5247cbb6f204f628d05877?format=webp&width=800",
+    ],
+    description:
+      "The golden era of NXT captured in one belt. Bold, dominant, and unmatched in its metallic black and gold tone.",
+    details: [
+      "6mm dual-layer plates",
+      "Black and gold contrast finish",
+      "Signature NXT logo engraving",
+    ],
+  },
+  {
+    id: "50",
+    name: "Internet Championship",
+    price: 1099,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F6fe8df13d4de42f7bae61cd79dd1578d?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F6fe8df13d4de42f7bae61cd79dd1578d?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F55f3ba697fd84a058a571b8797a0383b?format=webp&width=800",
+    ],
+    description:
+      "An online icon reborn with holographic effects, chrome details, and vibrant purple and blue accents.",
+    details: [
+      "6mm polished silver plates",
+      "Holographic background engraving",
+      "Includes personalized nameplate",
+    ],
+  },
+  {
+    id: "51",
+    name: "Big Gold Brown Strap Edition",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F0b4fae6f53c1420caad67c24d391691c?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F0b4fae6f53c1420caad67c24d391691c?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fe16f0532783b4a699347b088fc0da7bf?format=webp&width=800",
+    ],
+    description:
+      "A classic twist on the Big Gold legacy with a vintage brown strap and timeworn gold shine, built for collectors.",
+    details: [
+      "24k aged gold-plated plates",
+      "Brown genuine leather strap",
+      "Intricate lion and crown engravings",
+    ],
+  },
+  {
+    id: "52",
+    name: "Undertaker Legacy Title",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc810db1ac2804d1c852de3cad42dc099?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc810db1ac2804d1c852de3cad42dc099?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc3adc6487428456eb768fffa2b3b6d98?format=webp&width=800",
+    ],
+    description:
+      "Dark, powerful, and iconic. This legacy belt honors the Phenom with purple undertones and gothic engravings.",
+    details: [
+      "6mm antique silver plates",
+      "Purple highlights and custom side plates",
+      "Hand-tooled genuine leather strap",
+      "Includes exclusive Undertaker nameplate",
+    ],
+  },
+  {
+    id: "53",
+    name: "WWF European Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e0e048f932d4a41946d9052689c1a87?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e0e048f932d4a41946d9052689c1a87?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F9d704381117c4ae6a39090472d21a63b?format=webp&width=800",
+    ],
+    description:
+      "A timeless collector's piece celebrating international glory with detailed European map engraving and national flags.",
+    details: [
+      "6mm dual-layer gold plates",
+      "European continent engravings",
+      "Includes engraved champion nameplate",
+    ],
+  },
+  {
+    id: "54",
+    name: "WWF Cruiserweight Championship",
+    price: 1099,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc8625f739a874aaf867fb16c1ab50af6?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc8625f739a874aaf867fb16c1ab50af6?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2d2709c994ea439b80ae7855da935bd4?format=webp&width=800",
+    ],
+    description:
+      "A classic throwback to the early cruiserweight era, this WWF edition features silver plating, red accents, and a timeless globe centerpiece representing speed and honor.",
+    details: [
+      "6mm dual-layer silver plates",
+      "Red enamel detailing with WWF logo engraving",
+      "Classic globe centerpiece design",
+    ],
+  },
+  {
+    id: "55",
+    name: "NXT North American Title",
+    price: 899,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F824c1438199a42c5bde3447765790139?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F824c1438199a42c5bde3447765790139?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Feede575a2b424256a28e5b7ab0919de2?format=webp&width=800",
+    ],
+    description:
+      "Bold red centerpiece and bronze plating make this title a must-have for collectors and NXT fans alike.",
+    details: [
+      "6mm gold dual-layer plates",
+      "Brown leather strap",
+      "Globe centerpiece design",
+    ],
+  },
+  {
+    id: "56",
+    name: "Custom Championship",
+    price: 999,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff00d33451ee1473e91c253f1ed259311?format=webp&width=800",
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff00d33451ee1473e91c253f1ed259311?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e632876613441fbb5f9e8e17e386267?format=webp&width=800",
+    ],
+    description:
+      "Design your dream championship. Choose the theme, plating, gemstones, and strap color — made just for you.",
+    details: [
+      "Fully customizable design and finish",
+      "Personalized nameplate and logo options",
+      "24k gold or silver plating available",
+      "Fill in the box below with your belt details and contact us on WhatsApp to share images and complete your payment",
+    ],
+  },
 ];
 
 export const MERCH_PRODUCTS = [
