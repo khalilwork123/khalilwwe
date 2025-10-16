@@ -503,12 +503,12 @@ export const PRODUCTS: Product[] = [
   {
     id: "26",
     name: "WWE Women's World Championship (White Strap Special Edition)",
-    price: 1200,
+    price: 1199,
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F57047ee7d56f4a73a297ad69ec595e2b?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa77631d3585b43fab3c4ba892a29382f?format=webp&width=800",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F57047ee7d56f4a73a297ad69ec595e2b?format=webp&width=800",
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8b74cfb3c9154db6856158f0cae5507c?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa77631d3585b43fab3c4ba892a29382f?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2feba3f25c294823bd1b619bce779d35?format=webp&width=800",
     ],
     description:
       "White strap special with bold WWE logo over globe pattern and crystal‑studded border.",
@@ -521,12 +521,12 @@ export const PRODUCTS: Product[] = [
   {
     id: "27",
     name: "WWE Women's Undisputed Championship (White Strap Edition)",
-    price: 1200,
+    price: 1199,
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa77631d3585b43fab3c4ba892a29382f?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F57047ee7d56f4a73a297ad69ec595e2b?format=webp&width=800",
     images: [
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fa77631d3585b43fab3c4ba892a29382f?format=webp&width=800",
-      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2feba3f25c294823bd1b619bce779d35?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F57047ee7d56f4a73a297ad69ec595e2b?format=webp&width=800",
+      "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8b74cfb3c9154db6856158f0cae5507c?format=webp&width=800",
     ],
     description:
       "24k plates with textured detailing, black and silver logo centerpiece with red gemstones.",
