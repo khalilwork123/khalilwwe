@@ -1048,8 +1048,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "56",
-    name: "Custom Championship",
-    price: 999,
+    name: "Gold WWE 2013 Championship",
+    price: 1500,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff00d33451ee1473e91c253f1ed259311?format=webp&width=800",
     images: [
@@ -1057,12 +1057,11 @@ export const PRODUCTS: Product[] = [
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e632876613441fbb5f9e8e17e386267?format=webp&width=800",
     ],
     description:
-      "Design your dream championship. Choose the theme, plating, gemstones, and strap color — made just for you.",
+      "Custom made fully gold edition WWE Championship belt",
     details: [
-      "Fully customizable design and finish",
-      "Personalized nameplate and logo options",
-      "24k gold or silver plating available",
-      "Fill in the box below with your belt details and contact us on WhatsApp to share images and complete your payment",
+      "12mm plates for authentic TV feel",
+      "Crystal‑detailed WWE logo centerpiece",
+      "Includes 24k gold plates",
     ],
   },
 ];
