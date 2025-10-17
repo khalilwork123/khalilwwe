@@ -160,7 +160,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "7",
     name: "Custom WWE Side Plates (Any Superstar / Custom Design)",
-    price: 349,
+    price: 299,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F0fdf9e950f1247718be4a4b2dce9e9b1?format=webp&width=800",
     images: [
@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "8",
     name: "WWE NXT Championship (Gold / Grey)",
-    price: 999,
+    price: 850,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F50f25f48bd0c4a449bd8599f86cdf0a2?format=webp&width=800",
     images: [
@@ -214,7 +214,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "10",
     name: "WWF Heavyweight Championship",
-    price: 1400,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8347b571bbb947bf913dac08fd59dd3d?format=webp&width=800",
     images: [
@@ -232,7 +232,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "11",
     name: "WWE John Cena Edition US Spinner Championship",
-    price: 1200,
+    price: 1099,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F90e89752db2b4687a7130b0e4a4bd6a4?format=webp&width=800",
     images: [
@@ -250,7 +250,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "12",
     name: "WWE Intercontinental Championship (White Strap)",
-    price: 1400,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F336b0fdfd929422f8070df55f75422b9?format=webp&width=800",
     images: [
@@ -322,7 +322,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "16",
     name: "WWE Intercontinental Championship (Modern)",
-    price: 1200,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd8911714f8754881b0e84ccc1ae19a51?format=webp&width=800",
     images: [
@@ -376,7 +376,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "19",
     name: "WWE United States Championship",
-    price: 1200,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1d8d1b1b3fcf4ef6a479988b5a7cbff6?format=webp&width=800",
     images: [
@@ -539,7 +539,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "28",
     name: "WWE Intercontinental Championship – Classic Globe Edition",
-    price: 1300,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F7b987ee317aa44d99bc63cd0ea09c4ec?format=webp&width=800",
     images: [
@@ -557,7 +557,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "29",
     name: "TNA World Championship – Golden Legacy Edition",
-    price: 1400,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fdc90b57e19734ed0a56ff0691174381d?format=webp&width=800",
     images: [
@@ -665,7 +665,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "35",
     name: "WWE Eco‑Friendly Championship – Daniel Bryan Edition",
-    price: 999,
+    price: 899,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc140c3b38bd744a88f1487bb4d63fc8d?format=webp&width=800",
     images: [
@@ -683,7 +683,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "36",
     name: "The Fiend Championship Belt – Custom Edition",
-    price: 1200,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fe71a4f9613824994b27a356a31de86e6?format=webp&width=800",
     images: [
