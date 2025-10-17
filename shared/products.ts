@@ -268,7 +268,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "13",
     name: "WWE Hardcore Championship – Travis Scott Edition",
-    price: 1600,
+    price: 1499,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fd132c05a542141478452cc05cf058662?format=webp&width=800",
     images: [
@@ -286,7 +286,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "14",
     name: "WWE Championship – 2016 Edition",
-    price: 1300,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fed8a644539e442b18f3de771f639eef1?format=webp&width=800",
     images: [
@@ -304,7 +304,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "15",
     name: "WWE Tribal Chief Championship",
-    price: 1249,
+    price: 1049,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F2f82e566689b412889fda9a9c54b5d72?format=webp&width=800",
     images: [
@@ -340,7 +340,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "17",
     name: "WWE Universal Championship (Red Edition)",
-    price: 1300,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F5aaca6afaabe47fa9a020a7792aee4cf?format=webp&width=800",
     images: [
@@ -358,7 +358,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "18",
     name: "TNA World Heavyweight Championship",
-    price: 1200,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F21bc1adf74114454b3b1f89e0bdfe1b3?format=webp&width=800",
     images: [
@@ -394,7 +394,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "20",
     name: "Money in the Bank Briefcase",
-    price: 200,
+    price: 199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F6c6e39b3e60f4dac9f044687d7ee4ff5?format=webp&width=800",
     images: [
@@ -413,7 +413,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "21",
     name: "WWE Championship – 2013 Edition (The Rock)",
-    price: 1500,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F184c163fe1d74b909a669a5c795d5a5d?format=webp&width=800",
     images: [
@@ -449,7 +449,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "23",
     name: "UFC World Championship",
-    price: 1000,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1b8fa823e6194e13bc6e22fe1a53289d?format=webp&width=800",
     images: [
@@ -467,7 +467,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "24",
     name: "WWE Undisputed Championship – Roman Reigns 1316 Tribal Chief Edition",
-    price: 1249,
+    price: 1299,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F1e1dc657237447f48c4dba7c64fd8fae?format=webp&width=800",
     images: [
@@ -485,7 +485,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "25",
     name: "WWE Brahma Bull Championship – The Rock Exclusive Edition",
-    price: 1249,
+    price: 1099,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8458562dab804f4dbf8ba71a9e833c77?format=webp&width=800",
     images: [
@@ -575,7 +575,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "30",
     name: "WWE Classic United States Championship",
-    price: 1300,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F56ba66b3e51940e79cfb9c85fb94344f?format=webp&width=800",
     images: [
@@ -593,7 +593,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "31",
     name: "WWE Unified Tag Team Championship – Dual Belt Edition",
-    price: 1559,
+    price: 1499,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fc6b90a3f1cbe4596aef80649e4981b27?format=webp&width=800",
     images: [
@@ -611,7 +611,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "32",
     name: "WWE Tag Team Championships – Golden Globe Edition",
-    price: 1449,
+    price: 1499,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F352a068dfdee46928793db92af30dd95?format=webp&width=800",
     images: [
