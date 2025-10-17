@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "1",
     name: "WWE Championship",
-    price: 1400,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F806f9c142c6c44ca95e2b7adacdb1de0?format=webp&width=800",
     images: [
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "2",
     name: "WWE Spinner Championship",
-    price: 1300,
+    price: 1099,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F7c9dea0bc8be4bd0a7a966960a3b6f9c?format=webp&width=800",
     images: [
@@ -85,7 +85,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "3",
     name: "WWE Winged Eagle Championship",
-    price: 1200,
+    price: 1099,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F3f62b0f5b102478c84cdc778bb651439?format=webp&width=800",
     images: [
@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "4",
     name: "WWE World Heavyweight Championship – Big Gold",
-    price: 1400,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Fb4da063f981b41b48d29d6325d50cdef?format=webp&width=800",
     images: [
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "5",
     name: "WWE Undisputed Championship",
-    price: 1100,
+    price: 999,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F9572095db48047ba885fa0427d420149?format=webp&width=800",
     images: [
@@ -141,7 +141,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "6",
     name: "WWE World Heavyweight Championship (Modern)",
-    price: 1400,
+    price: 1199,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F221850ecef6843b88b54c432abb1efa1?format=webp&width=800",
     images: [
@@ -196,7 +196,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "9",
     name: "WWF Smoking Skull Championship",
-    price: 1200,
+    price: 1049,
     image:
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F25a6cd061ae642febb72a88305bc4131?format=webp&width=800",
     images: [
