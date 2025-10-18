@@ -1061,8 +1061,7 @@ export const PRODUCTS: Product[] = [
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2Ff00d33451ee1473e91c253f1ed259311?format=webp&width=800",
       "https://cdn.builder.io/api/v1/image/assets%2Fceda48cacd9a4a349cddd2c8eeadcb80%2F8e632876613441fbb5f9e8e17e386267?format=webp&width=800",
     ],
-    description:
-      "Custom made fully gold edition WWE Championship belt",
+    description: "Custom made fully gold edition WWE Championship belt",
     details: [
       "12mm plates for authentic TV feel",
       "Crystal‑detailed WWE logo centerpiece",

@@ -234,12 +234,18 @@ export default function Cart() {
               {getTShirtCount() > 0 && getBeltCount() === 0 && (
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
                   <p className="text-blue-700 text-sm">
-                    T-shirts only: Minimum 4 required, or add a belt to purchase any quantity.
+                    T-shirts only: Minimum 4 required, or add a belt to purchase
+                    any quantity.
                   </p>
                 </div>
               )}
 
-              <Link to="/checkout" className={!canCheckout() ? "pointer-events-none opacity-50" : ""}>
+              <Link
+                to="/checkout"
+                className={
+                  !canCheckout() ? "pointer-events-none opacity-50" : ""
+                }
+              >
                 <Button
                   disabled={!canCheckout()}
                   className="w-full bg-black hover:bg-white hover:text-black text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
