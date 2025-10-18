@@ -165,15 +165,38 @@ export const ProductModal = ({
                       </div>
                     )}
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold">Custom design request</h4>
-                      <textarea
-                        value={customRequest}
-                        onChange={(e) => setCustomRequest(e.target.value)}
-                        placeholder="Describe your custom logo, text, colors, etc."
-                        className="w-full border rounded-md p-3 min-h-24"
-                      />
-                    </div>
+                    {isTShirt && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold">Select Size *</h4>
+                        <div className="grid grid-cols-4 gap-2">
+                          {["XS", "M", "L", "XL"].map((size) => (
+                            <button
+                              key={size}
+                              onClick={() => setSelectedSize(size)}
+                              className={`py-2 px-3 rounded-md font-medium transition-colors ${
+                                selectedSize === size
+                                  ? "bg-black text-white"
+                                  : "border border-gray-300 hover:border-black"
+                              }`}
+                            >
+                              {size}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {!isTShirt && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold">Custom design request</h4>
+                        <textarea
+                          value={customRequest}
+                          onChange={(e) => setCustomRequest(e.target.value)}
+                          placeholder="Describe your custom logo, text, colors, etc."
+                          className="w-full border rounded-md p-3 min-h-24"
+                        />
+                      </div>
+                    )}
 
                     <motion.div
                       whileHover={{ scale: 1.02 }}
