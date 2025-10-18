@@ -29,6 +29,10 @@ interface CartContextType extends CartState {
   getSubtotal: () => number;
   getDiscount: () => number;
   getItemCount: () => number;
+  getTShirtCount: () => number;
+  getBeltCount: () => number;
+  canCheckout: () => boolean;
+  getCheckoutError: () => string | null;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
