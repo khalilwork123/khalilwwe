@@ -34,7 +34,18 @@ export const ProductModal = ({
 
   const handleAddToCart = () => {
     if (product) {
-      addItem(product, customRequest.trim() ? customRequest.trim() : undefined);
+      if (isTShirt && !selectedSize) {
+        toast.error("Please select a size");
+        return;
+      }
+
+      const request = isTShirt
+        ? `Size: ${selectedSize}`
+        : customRequest.trim()
+          ? customRequest.trim()
+          : undefined;
+
+      addItem(product, request);
       toast.success("Added to cart", {
         action: {
           label: "Go to cart",
