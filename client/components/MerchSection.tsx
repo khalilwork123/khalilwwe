@@ -3,16 +3,15 @@ import { MERCH_PRODUCTS, Product } from "@shared/products";
 import { Button } from "@/components/ui/button";
 import { ProductModal } from "@/components/ProductModal";
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const MerchSection = () => {
   const [selected, setSelected] = useState<Product | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const itemsPerPage = 4;
   const totalPages = Math.ceil(MERCH_PRODUCTS.length / itemsPerPage);
-  const startIdx = (currentPage - 1) * itemsPerPage;
+  const startIdx = currentPage * itemsPerPage;
   const currentItems = MERCH_PRODUCTS.slice(startIdx, startIdx + itemsPerPage);
 
   const openModal = (item: Product) => {
@@ -25,20 +24,8 @@ export const MerchSection = () => {
     setSelected(null);
   };
 
-  const goToNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const goToPreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
   return (
-    <section id="merch" className="py-16 px-6 bg-white">
+    <section id="merch" className="py-16 px-2 md:px-6 bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,16 +33,37 @@ export const MerchSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">WWE MERCH</h2>
+          <h2 className="text-3xl font-bold mb-6">WWE MERCH</h2>
+
+          {/* Circular Navigation Dots - Centered on Top */}
+          <div className="flex justify-center space-x-3 mb-8">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <motion.button
+                key={index}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(index)}
+                className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${
+                  index === currentPage
+                    ? "bg-black border-black scale-110"
+                    : "bg-transparent border-black"
+                }`}
+                aria-label={`Go to page ${index + 1}`}
+              />
+            ))}
+          </div>
+
           <p className="text-gray-600">
             Step into the spotlight with custom WWE merch!
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          key={currentPage}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
           {currentItems.map((item, index) => (
@@ -94,56 +102,21 @@ export const MerchSection = () => {
           ))}
         </motion.div>
 
-        {/* Pagination Controls */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex items-center justify-center gap-4 mb-8"
-        >
-          <button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            className="p-2 rounded-full border border-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-black hover:text-white transition-colors"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <div className="flex gap-2">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
-                  currentPage === page
-                    ? "bg-black text-white"
-                    : "border border-black hover:bg-gray-100"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            className="p-2 rounded-full border border-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-black hover:text-white transition-colors"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center text-gray-600"
-        >
-          <p>
-            Page {currentPage} of {totalPages}
-          </p>
-        </motion.div>
+        {/* Bottom pagination dots for mobile */}
+        <div className="flex justify-center space-x-3 mt-8 md:hidden">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <button
+              key={`bottom-${index}`}
+              onClick={() => setCurrentPage(index)}
+              className={`w-4 h-4 rounded-full border-2 ${
+                index === currentPage
+                  ? "bg-black border-black"
+                  : "bg-transparent border-black"
+              }`}
+              aria-label={`Go to page ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
       <ProductModal product={selected} isOpen={isOpen} onClose={closeModal} />
     </section>
