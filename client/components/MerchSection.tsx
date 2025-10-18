@@ -3,28 +3,38 @@ import { MERCH_PRODUCTS, Product } from "@shared/products";
 import { Button } from "@/components/ui/button";
 import { ProductModal } from "@/components/ProductModal";
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const MerchSection = () => {
   const [selected, setSelected] = useState<Product | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const openModal = (item: (typeof MERCH_PRODUCTS)[number]) => {
-    const p: Product = {
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      image: item.image,
-      images: [item.image, item.image],
-      description: "Official WWE merch",
-      soldOut: true,
-    };
-    setSelected(p);
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(MERCH_PRODUCTS.length / itemsPerPage);
+  const startIdx = (currentPage - 1) * itemsPerPage;
+  const currentItems = MERCH_PRODUCTS.slice(startIdx, startIdx + itemsPerPage);
+
+  const openModal = (item: Product) => {
+    setSelected(item);
     setIsOpen(true);
   };
 
   const closeModal = () => {
     setIsOpen(false);
     setSelected(null);
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   return (
@@ -46,9 +56,9 @@ export const MerchSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
-          {MERCH_PRODUCTS.map((item, index) => (
+          {currentItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 50 }}
@@ -82,6 +92,57 @@ export const MerchSection = () => {
               </Button>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Pagination Controls */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex items-center justify-center gap-4 mb-8"
+        >
+          <button
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            className="p-2 rounded-full border border-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-black hover:text-white transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
+                  currentPage === page
+                    ? "bg-black text-white"
+                    : "border border-black hover:bg-gray-100"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-full border border-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-black hover:text-white transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center text-gray-600"
+        >
+          <p>
+            Page {currentPage} of {totalPages}
+          </p>
         </motion.div>
       </div>
       <ProductModal product={selected} isOpen={isOpen} onClose={closeModal} />
