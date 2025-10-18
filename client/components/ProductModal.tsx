@@ -21,12 +21,16 @@ export const ProductModal = ({
 }: ProductModalProps) => {
   const { addItem } = useCart();
   const [customRequest, setCustomRequest] = useState("");
+  const [selectedSize, setSelectedSize] = useState<string>("");
   const [lightbox, setLightbox] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     setCustomRequest("");
+    setSelectedSize("");
   }, [product, isOpen]);
+
+  const isTShirt = product?.id.startsWith("T");
 
   const handleAddToCart = () => {
     if (product) {
