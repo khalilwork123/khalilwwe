@@ -98,7 +98,7 @@ export default function Checkout() {
     }));
   };
 
-  if (items.length === 0) {
+  if (items.length === 0 || !canCheckout()) {
     navigate("/cart");
     return null;
   }
