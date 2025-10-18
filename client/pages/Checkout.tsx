@@ -20,6 +20,8 @@ export default function Checkout() {
     getDiscount,
     appliedVoucher,
     clearCart,
+    canCheckout,
+    getCheckoutError,
   } = useCart();
   const [formData, setFormData] = useState<CheckoutData>({
     name: "",
