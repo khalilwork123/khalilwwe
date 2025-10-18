@@ -22,6 +22,10 @@ export default function Cart() {
     appliedVoucher,
     applyVoucher,
     removeVoucher,
+    canCheckout,
+    getCheckoutError,
+    getTShirtCount,
+    getBeltCount,
   } = useCart();
 
   const [voucherCode, setVoucherCode] = useState("");
