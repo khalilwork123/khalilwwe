@@ -185,6 +185,44 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     return state.items.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getTShirtCount = () => {
+    return state.items
+      .filter((item) => item.id.startsWith("T"))
+      .reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const getBeltCount = () => {
+    return state.items
+      .filter((item) => !item.id.startsWith("T"))
+      .reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const canCheckout = () => {
+    const tshirtCount = getTShirtCount();
+    const beltCount = getBeltCount();
+
+    if (tshirtCount === 0 && beltCount === 0) {
+      return false;
+    }
+
+    if (tshirtCount > 0 && beltCount === 0 && tshirtCount < 4) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const getCheckoutError = () => {
+    const tshirtCount = getTShirtCount();
+    const beltCount = getBeltCount();
+
+    if (tshirtCount > 0 && beltCount === 0 && tshirtCount < 4) {
+      return `You need at least 4 t-shirts to checkout without a belt. Currently you have ${tshirtCount} t-shirt${tshirtCount !== 1 ? "s" : ""}.`;
+    }
+
+    return null;
+  };
+
   const value: CartContextType = {
     ...state,
     addItem,
@@ -198,6 +236,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     getSubtotal,
     getDiscount,
     getItemCount,
+    getTShirtCount,
+    getBeltCount,
+    canCheckout,
+    getCheckoutError,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
