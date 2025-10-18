@@ -36,8 +36,13 @@ export interface Voucher {
 
 export const VOUCHERS: Voucher[] = [
   { code: "BURN", discount: 10, type: "percentage" },
-  { code: "WM42", discount: 25, type: "percentage" },
-  { code: "RKO", discount: 40, type: "percentage" },
+  { code: "MOHAMMED", discount: 15, type: "percentage" },
+  { code: "OMAR", discount: 15, type: "percentage" },
+  { code: "SULTAN", discount: 15, type: "percentage" },
+  { code: "RESTINPEACE21", discount: 21, type: "percentage" },
+  { code: "MITBCASHIN", discount: 30, type: "percentage" },
+  { code: "F5BEAST", discount: 25, type: "percentage" },
+  { code: "TRIBALCHIEF1316", discount: 40, type: "percentage" },
 ];
 
 // Default/fallback image
